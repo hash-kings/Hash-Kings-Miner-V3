@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
+using System.Windows.Forms;
 using zPoolMiner.Configs;
 using zPoolMiner.Devices;
 using zPoolMiner.Enums;
@@ -395,13 +396,45 @@ namespace zPoolMiner.Miners
             }
 
             Helpers.ConsolePrint("Monitoring", "If enabled here I would submit Monitoring data to the server");
-            /*
-            
+
+            if (ConfigManager.GeneralConfig.monitoring == true)
+            { //Run monitoring command here
+                var monversion = "Hash-Kings Miner V" + Application.ProductVersion;
+                var monstatus = "Running";
+                var monrunningminers = ""/*Runningminers go here*/;
+                var monserver = ConfigManager.GeneralConfig.MonServerurl;
+                /* fetch last command line for each miner
+                Do this for each mining group
+                Name           = $RunningMiner.Name
+                Path           = Resolve-Path -Relative $RunningMiner.Path
+                Type           = $RunningMiner.Type -join ','
+                Algorithm      = $RunningMiner.Algorithms -join ','
+                Pool           = $RunningMiner.Miner.Pools.PSObject.Properties.Value.Name -join ','
+                CurrentSpeed   = $RunningMiner.HashRate -join ','
+                EstimatedSpeed = $RunningMiner.Miner.HashRates.PSObject.Properties.Value -join ','
+                Profit         = $RunningMiner.Miner.Profit
+
+            Convert above data to Json
+            Fetch Profit to Variable
+            $Profit = [string]([Math]::Round(($data | Measure-Object Profit -Sum).Sum, 8))
+            Send the request
+            $Body = @{user = $Config.MonitoringUser; worker = $Config.WorkerName; version = $Version; status = $Status; profit = $Profit; data = $DataJSON}
+        Try {
+            $Response = Invoke-RestMethod -Uri "$($Config.MonitoringServer)/api/report.php" -Method Post -Body $Body -UseBasicParsing -TimeoutSec 10 -ErrorAction Stop
+            Helpers.ConsolePrint("Monitoring", "Reporting status to server..." + $Server responce here"
+        }
+        Catch {
+            Helpers.ConsolePrint("Monitoring", "Unable to send status to " monserver}*/
+            }
 
 
 
 
-            */
+
+
+
+
+
             // group new miners
             Dictionary<string, List<MiningPair>> newGroupedMiningPairs = new Dictionary<string, List<MiningPair>>();
             // group devices with same supported algorithms

@@ -62,6 +62,7 @@
         public string blockmunchWorkerName = "c=BTC,Worker1";
         public string blazepoolWorkerName = "c=BTC,Worker1";
         public string MPHWorkerName = "x";
+        public string MonServerurl = "";
 
 
         /// <summary>
@@ -95,6 +96,7 @@
         public bool blazepoolenabled = false;
         public bool MPHenabled = false;
         public bool devapi = false;
+        public bool monitoring = false;
 
         /// <summary>
         /// Defines the HideMiningWindows
