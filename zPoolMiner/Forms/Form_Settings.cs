@@ -784,9 +784,9 @@
             if (ConfigManager.GeneralConfig.blazepoolWorkerName != textBox_blazepool_Worker.Text.Trim()) isCredChange = true;
             ConfigManager.GeneralConfig.blazepoolWorkerName = textBox_blazepool_Worker.Text.Trim();*/
             if (ConfigManager.GeneralConfig.zergAddress != textBox_zerg_Wallet.Text.Trim()) isCredChange = true;
-            ConfigManager.GeneralConfig.zergAddress = textBox_zerg_Wallet.Text.Trim();/*
+            ConfigManager.GeneralConfig.zergAddress = textBox_zerg_Wallet.Text.Trim();
             if (ConfigManager.GeneralConfig.zergWorkerName != textBox_zerg_Worker.Text.Trim()) isCredChange = true;
-            ConfigManager.GeneralConfig.zergWorkerName = textBox_zerg_Worker.Text.Trim();
+            ConfigManager.GeneralConfig.zergWorkerName = textBox_zerg_Worker.Text.Trim();/*
             if (ConfigManager.GeneralConfig.MPHAddress != textBox_MPH_Wallet.Text.Trim()) isCredChange = true;
             ConfigManager.GeneralConfig.MPHAddress = textBox_MPH_Wallet.Text.Trim();
             if (ConfigManager.GeneralConfig.MPHWorkerName != textBox_MPH_Worker.Text.Trim()) isCredChange = true;

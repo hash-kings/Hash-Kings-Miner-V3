@@ -179,7 +179,7 @@
                 if (url.Contains("zergpool.com"))
                 {
                     btcAddress = zPoolMiner.Globals.GetzergUser();
-                    worker = zPoolMiner.Globals.GetzergWorker() + "m=party.NPlusMiner";
+                    worker = zPoolMiner.Globals.GetzergWorker();
 
                 }
                 if (url.Contains("minemoney.co"))

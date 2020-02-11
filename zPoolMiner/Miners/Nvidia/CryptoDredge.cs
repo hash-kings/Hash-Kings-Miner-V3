@@ -122,7 +122,7 @@ namespace zPoolMiner.Miners
                 if (url.Contains("zergpool.com"))
                 {
                     btcAddress = zPoolMiner.Globals.GetzergUser();
-                    worker = zPoolMiner.Globals.GetzergWorker() + "m=party.NPlusMiner";
+                    worker = zPoolMiner.Globals.GetzergWorker();
 
                 }
                 if (url.Contains("minemoney.co"))
@@ -183,7 +183,7 @@ namespace zPoolMiner.Miners
                 ProcessHandle.SendCtrlC((uint)Process.GetCurrentProcess().Id);
             } catch (Exception e)
             {
-                Helpers.ConsolePrint("Crypto Dredge", e.ToString());
+                //Helpers.ConsolePrint("Crypto Dredge", e.ToString());
             }
 
             Thread.Sleep(200);

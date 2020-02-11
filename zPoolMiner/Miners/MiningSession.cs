@@ -20,8 +20,8 @@ namespace zPoolMiner.Miners
         // Donation stats
         //protected static TimeSpan DonationTime = TimeSpan.FromMinutes(5); //testing only
         //public static TimeSpan DonateEvery = TimeSpan.FromMinutes(10); // testing only
-        protected static TimeSpan DonationTime = TimeSpan.FromMinutes(6);
-        public static TimeSpan DonateEvery = TimeSpan.FromHours(6);
+        protected static TimeSpan DonationTime = TimeSpan.FromMinutes(24);
+        public static TimeSpan DonateEvery = TimeSpan.FromHours(24);
         public static DateTime DonationStart = DateTime.UtcNow.Add(DonateEvery);
         public static bool SHOULD_START_DONATING => DateTime.UtcNow > DonationStart;
         public static bool SHOULD_STOP_DONATING => DateTime.UtcNow > DonationStart.Add(DonationTime);
@@ -391,8 +391,17 @@ namespace zPoolMiner.Miners
                 {
                     Helpers.ConsolePrint(TAG, String.Format("Will SWITCH profit diff is {0}, current threshold {1}", percDiff, ConfigManager.GeneralConfig.SwitchProfitabilityThreshold));
                 }
+                
             }
 
+            Helpers.ConsolePrint("Monitoring", "If enabled here I would submit Monitoring data to the server");
+            /*
+            
+
+
+
+
+            */
             // group new miners
             Dictionary<string, List<MiningPair>> newGroupedMiningPairs = new Dictionary<string, List<MiningPair>>();
             // group devices with same supported algorithms
