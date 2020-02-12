@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
@@ -403,6 +405,7 @@ namespace zPoolMiner.Miners
                 var monstatus = "Running";
                 var monrunningminers = ""/*Runningminers go here*/;
                 var monserver = ConfigManager.GeneralConfig.MonServerurl;
+                var request = (HttpWebRequest)WebRequest.Create(monserver);
                 /* fetch last command line for each miner
                 Do this for each mining group
                 Name           = $RunningMiner.Name
@@ -425,6 +428,21 @@ namespace zPoolMiner.Miners
         }
         Catch {
             Helpers.ConsolePrint("Monitoring", "Unable to send status to " monserver}*/
+                var postData = "Data1";
+                postData += "&Data2";
+                var data = Encoding.ASCII.GetBytes(postData);
+                request.Method = "POST";
+                request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentLength = data.Length;
+
+                using (var stream = request.GetRequestStream())
+                {
+                    stream.Write(data, 0, data.Length);
+                }
+
+                var response = (HttpWebResponse)request.GetResponse();
+
+                var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
             }
 
 

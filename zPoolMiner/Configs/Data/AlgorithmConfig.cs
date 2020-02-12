@@ -57,6 +57,6 @@
         /// <summary>
         /// Defines the LessThreads
         /// </summary>
-        public int LessThreads = 1;
+        public int LessThreads = 2;
     }
 }
