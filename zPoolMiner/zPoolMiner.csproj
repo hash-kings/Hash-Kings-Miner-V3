@@ -478,6 +478,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyDownloader.Core.csproj" />
+    <Content Include="Resources\button_benchmark.png" />
+    <None Include="Resources\button_benchmark1.png" />
+    <Content Include="Resources\button_settings.png" />
+    <None Include="Resources\button_settings1.png" />
+    <Content Include="Resources\button_start.png" />
+    <None Include="Resources\button_start1.png" />
+    <Content Include="Resources\button_stats.png" />
+    <None Include="Resources\button_stats1.png" />
+    <Content Include="Resources\button_stop.png" />
+    <None Include="Resources\button_stop1.png" />
+    <Content Include="Resources\Header BG.png" />
+    <None Include="Resources\Header BG1.png" />
+    <Content Include="Resources\HK Main Small.png" />
+    <None Include="Resources\HK Main Small1.png" />
+    <Content Include="Resources\HK Main Trans !.png" />
     <Content Include="tiny.ico" />
     <None Include="Resources\black-paper.png" />
     <Content Include="Resources\info_black_18.png" />

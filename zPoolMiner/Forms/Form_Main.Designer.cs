@@ -67,16 +67,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.labelDevfeeStatus = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.deviceStats1 = new zPoolMiner.Forms.Components.DeviceStats();
+            this.devicesListViewEnableControl1 = new zPoolMiner.Forms.Components.DevicesListViewEnableControl();
             this.tempLower = new System.Windows.Forms.NumericUpDown();
             this.tempUpper = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.deviceStats1 = new zPoolMiner.Forms.Components.DeviceStats();
-            this.devicesListViewEnableControl1 = new zPoolMiner.Forms.Components.DevicesListViewEnableControl();
             this.beepToggle = new zPoolMiner.Forms.Components.Toggle();
             this.statusStrip1.SuspendLayout();
             this.flowLayoutPanelRates.SuspendLayout();
@@ -92,16 +94,21 @@
             // 
             // buttonStartMining
             // 
+            this.buttonStartMining.BackColor = System.Drawing.Color.Transparent;
+            this.buttonStartMining.BackgroundImage = global::zPoolMiner.Properties.Resources.button_start;
+            this.buttonStartMining.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonStartMining.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonStartMining.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.buttonStartMining.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.buttonStartMining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStartMining.Font = new System.Drawing.Font("Franklin Gothic Medium", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStartMining.ForeColor = System.Drawing.Color.Transparent;
             this.buttonStartMining.Location = new System.Drawing.Point(0, 0);
             this.buttonStartMining.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonStartMining.Name = "buttonStartMining";
-            this.buttonStartMining.Size = new System.Drawing.Size(98, 63);
+            this.buttonStartMining.Size = new System.Drawing.Size(92, 67);
             this.buttonStartMining.TabIndex = 6;
-            this.buttonStartMining.Text = "&Start";
-            this.buttonStartMining.UseVisualStyleBackColor = true;
+            this.buttonStartMining.UseVisualStyleBackColor = false;
             this.buttonStartMining.Click += new System.EventHandler(this.ButtonStartMining_Click);
             // 
             // textBoxBTCAddress
@@ -289,59 +296,72 @@
             // 
             // buttonStopMining
             // 
+            this.buttonStopMining.BackColor = System.Drawing.Color.Transparent;
+            this.buttonStopMining.BackgroundImage = global::zPoolMiner.Properties.Resources.button_stop;
+            this.buttonStopMining.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonStopMining.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonStopMining.Enabled = false;
+            this.buttonStopMining.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.buttonStopMining.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.buttonStopMining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStopMining.Location = new System.Drawing.Point(98, 0);
+            this.buttonStopMining.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonStopMining.Location = new System.Drawing.Point(92, 0);
             this.buttonStopMining.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonStopMining.Name = "buttonStopMining";
-            this.buttonStopMining.Size = new System.Drawing.Size(98, 63);
+            this.buttonStopMining.Size = new System.Drawing.Size(90, 67);
             this.buttonStopMining.TabIndex = 7;
-            this.buttonStopMining.Text = "St&op";
-            this.buttonStopMining.UseVisualStyleBackColor = true;
+            this.buttonStopMining.UseVisualStyleBackColor = false;
             this.buttonStopMining.Click += new System.EventHandler(this.ButtonStopMining_Click);
             // 
             // buttonBenchmark
             // 
+            this.buttonBenchmark.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBenchmark.BackgroundImage = global::zPoolMiner.Properties.Resources.button_benchmark;
+            this.buttonBenchmark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonBenchmark.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonBenchmark.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.buttonBenchmark.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonBenchmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBenchmark.Font = new System.Drawing.Font("Franklin Gothic Medium", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBenchmark.Location = new System.Drawing.Point(408, 0);
+            this.buttonBenchmark.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonBenchmark.Location = new System.Drawing.Point(392, 0);
             this.buttonBenchmark.Margin = new System.Windows.Forms.Padding(3, 3, 3, 2);
             this.buttonBenchmark.Name = "buttonBenchmark";
-            this.buttonBenchmark.Size = new System.Drawing.Size(98, 63);
+            this.buttonBenchmark.Size = new System.Drawing.Size(135, 67);
             this.buttonBenchmark.TabIndex = 4;
-            this.buttonBenchmark.Text = "&Benchmark";
-            this.buttonBenchmark.UseVisualStyleBackColor = true;
+            this.buttonBenchmark.UseVisualStyleBackColor = false;
             this.buttonBenchmark.Click += new System.EventHandler(this.ButtonBenchmark_Click);
             // 
             // buttonSettings
             // 
+            this.buttonSettings.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.BackgroundImage = global::zPoolMiner.Properties.Resources.button_settings;
+            this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonSettings.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonSettings.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSettings.Location = new System.Drawing.Point(604, 0);
+            this.buttonSettings.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.Location = new System.Drawing.Point(605, 0);
             this.buttonSettings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(98, 63);
+            this.buttonSettings.Size = new System.Drawing.Size(101, 67);
             this.buttonSettings.TabIndex = 5;
-            this.buttonSettings.Text = "S&ettings";
-            this.buttonSettings.UseVisualStyleBackColor = true;
+            this.buttonSettings.UseVisualStyleBackColor = false;
             this.buttonSettings.Click += new System.EventHandler(this.ButtonSettings_Click);
             // 
             // buttonLogo
             // 
-            this.buttonLogo.BackColor = System.Drawing.Color.White;
+            this.buttonLogo.BackColor = System.Drawing.Color.Transparent;
             this.buttonLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonLogo.FlatAppearance.BorderSize = 0;
             this.buttonLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogo.Image = global::zPoolMiner.Properties.Resources.Logo2;
+            this.buttonLogo.Image = global::zPoolMiner.Properties.Resources.HK_Main_Small;
             this.buttonLogo.Location = new System.Drawing.Point(0, 0);
+            this.buttonLogo.MaximumSize = new System.Drawing.Size(210, 67);
             this.buttonLogo.Name = "buttonLogo";
-            this.buttonLogo.Size = new System.Drawing.Size(212, 63);
+            this.buttonLogo.Size = new System.Drawing.Size(210, 61);
             this.buttonLogo.TabIndex = 11;
             this.buttonLogo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.buttonLogo.UseMnemonic = false;
@@ -425,16 +445,19 @@
             // 
             // buttonHelp
             // 
-            this.buttonHelp.BackColor = System.Drawing.Color.White;
+            this.buttonHelp.BackColor = System.Drawing.Color.Transparent;
+            this.buttonHelp.BackgroundImage = global::zPoolMiner.Properties.Resources.button_stats;
+            this.buttonHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonHelp.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonHelp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.buttonHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHelp.Location = new System.Drawing.Point(506, 0);
+            this.buttonHelp.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonHelp.Location = new System.Drawing.Point(527, 0);
             this.buttonHelp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(98, 63);
+            this.buttonHelp.Size = new System.Drawing.Size(78, 67);
             this.buttonHelp.TabIndex = 8;
-            this.buttonHelp.Text = "&Online Stats";
             this.buttonHelp.UseVisualStyleBackColor = false;
             this.buttonHelp.Click += new System.EventHandler(this.ButtonHelp_Click);
             // 
@@ -449,8 +472,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.buttonBenchmark);
             this.panel1.Controls.Add(this.buttonHelp);
@@ -464,19 +487,22 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.Controls.Add(this.buttonLogo);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(196, 0);
+            this.panel6.Location = new System.Drawing.Point(182, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(212, 63);
+            this.panel6.Size = new System.Drawing.Size(210, 67);
             this.panel6.TabIndex = 114;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.richTextBox1);
+            this.panel3.BackgroundImage = global::zPoolMiner.Properties.Resources.Header_BG;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.labelDevfeeStatus);
             this.panel3.Controls.Add(this.labelBitcoinAddress);
             this.panel3.Controls.Add(this.textBoxBTCAddress);
@@ -484,25 +510,40 @@
             this.panel3.Controls.Add(this.comboBoxLocation);
             this.panel3.Controls.Add(this.textBoxWorkerName);
             this.panel3.Controls.Add(this.labelServiceLocation);
-            this.panel3.Location = new System.Drawing.Point(0, 2);
+            this.panel3.Location = new System.Drawing.Point(1, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(707, 62);
+            this.panel3.Size = new System.Drawing.Size(706, 62);
             this.panel3.TabIndex = 112;
             // 
-            // richTextBox1
+            // label5
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.richTextBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.richTextBox1.Location = new System.Drawing.Point(0, -2);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox1.Size = new System.Drawing.Size(449, 62);
-            this.richTextBox1.TabIndex = 115;
-            this.richTextBox1.Text = "1. Set options in Settings > Pools/Usernames/Passwords \n2. Benchmark your cards \n" +
-    "3. Start Mining \n";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(-1, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 16);
+            this.label5.TabIndex = 103;
+            this.label5.Text = "3. Start Mining ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(0, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(134, 16);
+            this.label4.TabIndex = 102;
+            this.label4.Text = "2. Benchmark your cards ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(294, 16);
+            this.label3.TabIndex = 101;
+            this.label3.Text = "1. Set options in Settings > Pools/Usernames/Passwords ";
             // 
             // labelDevfeeStatus
             // 
@@ -529,6 +570,43 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(706, 253);
             this.panel5.TabIndex = 114;
+            // 
+            // deviceStats1
+            // 
+            this.deviceStats1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.deviceStats1.AutoSize = true;
+            this.deviceStats1.BackColor = System.Drawing.SystemColors.Window;
+            this.deviceStats1.BenchmarkCalculation = null;
+            this.deviceStats1.FirstColumnText = "Device Stats";
+            this.deviceStats1.IsInBenchmark = false;
+            this.deviceStats1.IsMining = false;
+            this.deviceStats1.Location = new System.Drawing.Point(327, 4);
+            this.deviceStats1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.deviceStats1.Name = "deviceStats1";
+            this.deviceStats1.SaveToGeneralConfig = false;
+            this.deviceStats1.Size = new System.Drawing.Size(374, 244);
+            this.deviceStats1.TabIndex = 110;
+            // 
+            // devicesListViewEnableControl1
+            // 
+            this.devicesListViewEnableControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.devicesListViewEnableControl1.AutoSize = true;
+            this.devicesListViewEnableControl1.BackColor = System.Drawing.SystemColors.Window;
+            this.devicesListViewEnableControl1.BenchmarkCalculation = null;
+            this.devicesListViewEnableControl1.FirstColumnText = "Enabled";
+            this.devicesListViewEnableControl1.ForeColor = System.Drawing.Color.Black;
+            this.devicesListViewEnableControl1.IsInBenchmark = false;
+            this.devicesListViewEnableControl1.IsMining = false;
+            this.devicesListViewEnableControl1.Location = new System.Drawing.Point(4, 4);
+            this.devicesListViewEnableControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.devicesListViewEnableControl1.Name = "devicesListViewEnableControl1";
+            this.devicesListViewEnableControl1.SaveToGeneralConfig = false;
+            this.devicesListViewEnableControl1.Size = new System.Drawing.Size(319, 244);
+            this.devicesListViewEnableControl1.TabIndex = 109;
             // 
             // tempLower
             // 
@@ -608,43 +686,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Temp Monitoring";
             // 
-            // deviceStats1
-            // 
-            this.deviceStats1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.deviceStats1.AutoSize = true;
-            this.deviceStats1.BackColor = System.Drawing.SystemColors.Window;
-            this.deviceStats1.BenchmarkCalculation = null;
-            this.deviceStats1.FirstColumnText = "Device Stats";
-            this.deviceStats1.IsInBenchmark = false;
-            this.deviceStats1.IsMining = false;
-            this.deviceStats1.Location = new System.Drawing.Point(327, 4);
-            this.deviceStats1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.deviceStats1.Name = "deviceStats1";
-            this.deviceStats1.SaveToGeneralConfig = false;
-            this.deviceStats1.Size = new System.Drawing.Size(374, 244);
-            this.deviceStats1.TabIndex = 110;
-            // 
-            // devicesListViewEnableControl1
-            // 
-            this.devicesListViewEnableControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.devicesListViewEnableControl1.AutoSize = true;
-            this.devicesListViewEnableControl1.BackColor = System.Drawing.SystemColors.Window;
-            this.devicesListViewEnableControl1.BenchmarkCalculation = null;
-            this.devicesListViewEnableControl1.FirstColumnText = "Enabled";
-            this.devicesListViewEnableControl1.ForeColor = System.Drawing.Color.Black;
-            this.devicesListViewEnableControl1.IsInBenchmark = false;
-            this.devicesListViewEnableControl1.IsMining = false;
-            this.devicesListViewEnableControl1.Location = new System.Drawing.Point(4, 4);
-            this.devicesListViewEnableControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.devicesListViewEnableControl1.Name = "devicesListViewEnableControl1";
-            this.devicesListViewEnableControl1.SaveToGeneralConfig = false;
-            this.devicesListViewEnableControl1.Size = new System.Drawing.Size(319, 244);
-            this.devicesListViewEnableControl1.TabIndex = 109;
-            // 
             // beepToggle
             // 
             this.beepToggle.BackColor = System.Drawing.Color.Transparent;
@@ -665,6 +706,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.BackgroundImage = global::zPoolMiner.Properties.Resources.Header_BG;
             this.ClientSize = new System.Drawing.Size(707, 525);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.groupBox2);
@@ -708,11 +750,6 @@
             this.PerformLayout();
 
         }
-
-        /// <summary>
-        /// Defines the buttonStartMining
-        /// </summary>
-        private System.Windows.Forms.Button buttonStartMining;
 
         /// <summary>
         /// Defines the labelServiceLocation
@@ -760,16 +797,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelGlobalRateText;
 
         /// <summary>
-        /// Defines the buttonStopMining
-        /// </summary>
-        private System.Windows.Forms.Button buttonStopMining;
-
-        /// <summary>
-        /// Defines the buttonBenchmark
-        /// </summary>
-        private System.Windows.Forms.Button buttonBenchmark;
-
-        /// <summary>
         /// Defines the toolStripStatusLabelBTCDayText
         /// </summary>
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelBTCDayText;
@@ -788,11 +815,6 @@
         /// Defines the toolStripStatusLabelBalanceDollarValue
         /// </summary>
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelBalanceDollarValue;
-
-        /// <summary>
-        /// Defines the buttonSettings
-        /// </summary>
-        private System.Windows.Forms.Button buttonSettings;
 
         /// <summary>
         /// Defines the buttonLogo
@@ -855,11 +877,6 @@
         private Forms.Components.DevicesListViewEnableControl devicesListViewEnableControl1;
 
         /// <summary>
-        /// Defines the buttonHelp
-        /// </summary>
-        private System.Windows.Forms.Button buttonHelp;
-
-        /// <summary>
         /// Defines the linkLabelNewVersion
         /// </summary>
         private System.Windows.Forms.LinkLabel linkLabelNewVersion;
@@ -903,6 +920,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.Label labelDevfeeStatus;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button buttonStartMining;
+        private System.Windows.Forms.Button buttonStopMining;
+        private System.Windows.Forms.Button buttonBenchmark;
+        private System.Windows.Forms.Button buttonSettings;
+        private System.Windows.Forms.Button buttonHelp;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

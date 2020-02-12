@@ -1980,6 +1980,8 @@
             // checkBox_zerg
             // 
             this.checkBox_zerg.AutoSize = true;
+            this.checkBox_zerg.Checked = true;
+            this.checkBox_zerg.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_zerg.Location = new System.Drawing.Point(11, 116);
             this.checkBox_zerg.Name = "checkBox_zerg";
             this.checkBox_zerg.Size = new System.Drawing.Size(69, 17);
@@ -2012,8 +2014,6 @@
             // checkBox_NiceHash
             // 
             this.checkBox_NiceHash.AutoSize = true;
-            this.checkBox_NiceHash.Checked = true;
-            this.checkBox_NiceHash.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_NiceHash.Enabled = false;
             this.checkBox_NiceHash.Location = new System.Drawing.Point(11, 93);
             this.checkBox_NiceHash.Name = "checkBox_NiceHash";
@@ -2025,8 +2025,6 @@
             // checkBox_HashRefinery
             // 
             this.checkBox_HashRefinery.AutoSize = true;
-            this.checkBox_HashRefinery.Checked = true;
-            this.checkBox_HashRefinery.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_HashRefinery.Enabled = false;
             this.checkBox_HashRefinery.Location = new System.Drawing.Point(11, 69);
             this.checkBox_HashRefinery.Name = "checkBox_HashRefinery";
@@ -2038,8 +2036,6 @@
             // checkBox_AhashPool
             // 
             this.checkBox_AhashPool.AutoSize = true;
-            this.checkBox_AhashPool.Checked = true;
-            this.checkBox_AhashPool.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_AhashPool.Enabled = false;
             this.checkBox_AhashPool.Location = new System.Drawing.Point(11, 45);
             this.checkBox_AhashPool.Name = "checkBox_AhashPool";
@@ -2051,8 +2047,6 @@
             // checkBox_zpool
             // 
             this.checkBox_zpool.AutoSize = true;
-            this.checkBox_zpool.Checked = true;
-            this.checkBox_zpool.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_zpool.Enabled = false;
             this.checkBox_zpool.Location = new System.Drawing.Point(11, 19);
             this.checkBox_zpool.Name = "checkBox_zpool";

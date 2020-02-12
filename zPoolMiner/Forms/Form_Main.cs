@@ -110,7 +110,7 @@
         /// <summary>
         /// Defines the _betaAlphaPostfixString
         /// </summary>
-        private const string _betaAlphaPostfixString = " Beta";
+        private const string _betaAlphaPostfixString = " Alpha";
 
         /// <summary>
         /// Defines the _isDeviceDetectionInitialized
@@ -230,11 +230,11 @@
 
             devicesListViewEnableControl1.InitLocale();
 
-            buttonBenchmark.Text = International.GetText("Form_Main_benchmark");
-            buttonSettings.Text = International.GetText("Form_Main_settings");
-            buttonStartMining.Text = International.GetText("Form_Main_start");
-            buttonStopMining.Text = International.GetText("Form_Main_stop");
-            buttonHelp.Text = International.GetText("Form_Main_help");
+            buttonBenchmark.Text = "";// International.GetText("Form_Main_benchmark");
+            buttonSettings.Text = ""; //International.GetText("Form_Main_settings");
+            buttonStartMining.Text = "";// International.GetText("Form_Main_start");
+            buttonStopMining.Text = ""; //International.GetText("Form_Main_stop");
+            buttonHelp.Text = ""; //International.GetText("Form_Main_help");
 
             label_NotProfitable.Text = International.GetText("Form_Main_MINING_NOT_PROFITABLE");
             groupBox1.Text = String.Format(International.GetText("Form_Main_Group_Device_Rates"), International.GetText("Form_Main_SMA_Update_NEVER"));
@@ -1179,7 +1179,7 @@
         /// <param name="e">The <see cref="EventArgs"/></param>
         private void ButtonLogo_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(Links.VisitURL);
+            //System.Diagnostics.Process.Start(Links.VisitURL);
         }
 
         /// <summary>
@@ -1189,7 +1189,7 @@
         /// <param name="e">The <see cref="EventArgs"/></param>
         private void ButtonHelp_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(Links.CheckStats + textBoxBTCAddress.Text.Trim());
+            System.Diagnostics.Process.Start(Links.CheckStats + ConfigManager.GeneralConfig.zergAddress.Trim());
         }
 
         /// <summary>

@@ -1,7 +1,7 @@
 Discussion and Roadmap located at
 <a href="https://bitcointalk.org/index.php?topic=2691188" target="_blank">BitcoinTalk Forum</a>
 
-# Hash-Kings Miner
+# zPool Miner
 
 - [Introduction](#introduction)
 - [What are the benefits?](#benefits)
@@ -9,7 +9,7 @@ Discussion and Roadmap located at
 - [Requirements](#requirements)
 - [How to get&run it?](#run)
 - [Where is the profit coming from?](#profit)
-- [How to run Hash-Kings Miner only when profitability is high enough?](#highprofit)
+- [How to run zPool Miner only when profitability is high enough?](#highprofit)
 - [Additional options](#options)
 - [Troubleshooting](#troubleshooting)
 - [How to report bugs and issues?](#bugs)
@@ -17,7 +17,7 @@ Discussion and Roadmap located at
 
 # <a name="introduction"></a> Introduction
 
-Hash-Kings Miner is a continuation of Nicehash Miner Legacy. This version is intended for experienced miners who want the quickest updates and highest hashrates.
+zPool Miner is a continuation of Nicehash Miner Legacy. This version is intended for experienced miners who want the quickest updates and highest hashrates.
 
 
 <img src="Resources/ZpoolMinerLegacy.png" />
@@ -26,7 +26,7 @@ Please follow us on Twitter <a href="https://twitter.com/MyCryptoCoinz" target="
 
 # <a name="benefits"></a> What are the benefits?
 
-Hash-Kings Miner is an advanced auto-miner that supports the latest algorithms and miners. No need to go through tons of configuration files, various mining software versions, configuration tuning or cryptocurrency coins market analysis. **Auto-tuning for best performance and efficiency**, automatic selection and runtime **automatic switching to most profitable cryptocurrency algorithm** are all integrated into Hash-Kings Miner and will enable you seamless, joyful and **profitable mining experience**.
+zPool Miner is an advanced auto-miner that supports the latest algorithms and miners. No need to go through tons of configuration files, various mining software versions, configuration tuning or cryptocurrency coins market analysis. **Auto-tuning for best performance and efficiency**, automatic selection and runtime **automatic switching to most profitable cryptocurrency algorithm** are all integrated into zPool Miner and will enable you seamless, joyful and **profitable mining experience**.
 
 # <a name="features"></a> Features
 
@@ -58,21 +58,21 @@ All you have to do is download, extract and run the miner (no installation neede
 <i>**Note**: .NET Framework 2.0 or higher and Microsoft Visual C++ Redistributable 2013 is required. No additional installations should be needed if you use Windows 8.1 or later. However, if you encounter any issues when starting application (application would fail to start or errors/warnings about missing DLL files are displayed) you should download and install <a href="https://www.microsoft.com/en-us/download/details.aspx?id=30653" target="_blank">Microsoft **.NET Framework 2.0**</a> and <a href="https://www.microsoft.com/en-us/download/details.aspx?id=40784" target="_blank">Microsoft **Visual C++ Redistributable 2013 (vcredist_x64.exe)**</a> (after installation a reboot might be required).</i>
 
 Detailed instructions:
-
+- Download binaries from here: https://github.com/Cryptominer937/zPoolMiner/releases
 - Extract zip archive
 - Run NiceHashMinerLegacy.exe
 - After first run, start benchmark test, otherwise Multi-Algorithm mining will not work properly; for AMD GPUs we suggest you to run **Precise benchmark**
 - Make sure you select your own personal Bitcoin wallet to receive payments, see **Bitcoin wallet guidelines and instructions**.
-- You will receive Bitcoin payments according to the pools payout schedule.
+- You will receive Bitcoin payments according to our payments schedule: http://www.zpool.ca/
 
-**WARNING**: Due to specific requirements of the supporting back-end program "sgminer", you can **not** run Hash-Kings Miner through Windows RDP (Remote Desktop Protocol) if you are using **AMD GPUs**. If you still wish to use remote access to your computer while running Hash-Kings Miner we suggest you to use TeamViewer: https://www.teamviewer.com.
+**WARNING**: Due to specific requirements of the supporting back-end program "sgminer", you can **not** run zPool Miner through Windows RDP (Remote Desktop Protocol) if you are using **AMD GPUs**. If you still wish to use remote access to your computer while running zPool Miner we suggest you to use TeamViewer: https://www.teamviewer.com.
 
 # <a name="profit"></a> Where is the profit coming from?
 
-As a back-end Hash-Kings Miner relies on the pool service. By running Hash-Kings Miner you're Mining one Coin and getting paid in BTC.
+As a back-end zPool Miner relies on the <a href="http://www.zpool.ca/" target="_blank">zPool.ca</a> service. By running zPool Miner you're Mining one Coin and getting paid in BTC.
 
-# <a name="highprofit"></a> How to run Hash-Kings Miner only when profitability is high enough?
-Profitability of mining can go up and down that may be unprofitable to mine especially places with high electricity cost. By using the "MinimumProfit" settings, Hash-Kings will stop mining if the current profits are below the minimum amount (in USD). This will help you mine during "profitable" times only.
+# <a name="highprofit"></a> How to run zPool Miner only when profitability is high enough?
+Profitability of mining can go up and down that may be unprofitable to mine especially places with high electricity cost. By using the "MinimumProfit" settings, zPoolMinerLegacy will stop mining if the current profits are below the minimum amount (in USD). This will help you mine during "profitable" times only.
 
 # <a name="options"></a> Additional options
 
@@ -81,18 +81,18 @@ Click 'Settings' button.
 ## General settings
 Parameter | Range | Description
 -----------------|----------|-------------------
-ConfigFileVersion | Version | This is to identify which version of Hash-Kings did the config file is made from.
-Language | number | Language selection for Hash-Kings GUI.
+ConfigFileVersion | Version | This is to identify which version of zPoolMinerLegacy did the config file is made from.
+Language | number | Language selection for zPoolMinerLegacy GUI.
 DisplayCurrency | valid 3 letter code | Converts to selected currency via http://fixer.io valid options are any supported via fixer.
 DebugConsole | true or false | When set to true, it displays debug console.
-BitcoinAddress | valid BTC address | The address that Hash-Kings will mine to.
-WorkerName | text | To identify the computer on the pool web UI.
+BitcoinAddress | valid BTC address | The address that zPoolMinerLegacy will mine to.
+WorkerName | text | To identify the computer on zPool web UI.
 ServiceLocation | number | Used to select the location of the mining server.
 HideMiningWindows | true or false | When set to true, sgminer, ccminer and cpuminer console windows will be hidden.
-MinimizeToTray | true or false | When set to true, Hash-Kings will minimize to the system tray.
+MinimizeToTray | true or false | When set to true, zPoolMinerLegacy will minimize to the system tray.
 ForceCPUExtension | 0, 1, 2, 3 or 4 | Force certain CPU extension miner. 0 is automatic, 1 for AVX2, 2 for AVX, 3 for AES and  4 for SSE2.
 SwitchMinSecondsFixed | number | Fixed part of minimal time (in seconds) before miner switches algorithm. Total time is SwitchMinSecondsFixed + SwitchMinSecondsDynamic.
-SwitchMinSecondsDynamic | number | Random part of minimal time (in seconds) before miner switches algorithm. Total time is SwitchMinSecondsFixed + SwitchMinSecondsDynamic. Random part is used to prevent all world-wide Hash-Kings Miner users to have the exact same switching pattern.
+SwitchMinSecondsDynamic | number | Random part of minimal time (in seconds) before miner switches algorithm. Total time is SwitchMinSecondsFixed + SwitchMinSecondsDynamic. Random part is used to prevent all world-wide zPool Miner users to have the exact same switching pattern.
 SwitchMinSecondsAMD | number | Fixed part of minimal time (in seconds) before miner switches algorithm (additional time for AMD GPUs). Total time is SwitchMinSecondsFixed + SwitchMinSecondsAMD + SwitchMinSecondsDynamic.
 MinerAPIQueryInterval | number | Amount of time between each API call to get the latest stats from miner.
 MinerRestartDelayMS | number | Amount of time to delay before trying to restart the miner.
@@ -107,19 +107,19 @@ DeviceDetection\DisableDetectionAMD | true or false | Set it to true if you woul
 AutoScaleBTCValues | true or false | Set it to true if you wish to see the BTC values autoscale to the appropriate scale.
 StartMiningWhenIdle | true or false | Automatically start mining when computer is idle and stop mining when computer is being used.
 MinIdleSeconds | number | When StartMiningWhenIdle is set to true, MinIdleSeconds tells how many seconds computer has to be idle before mining starts.
-LogToFile | true or false | Set it to true if you would like Hash-Kings to log to a file.
+LogToFile | true or false | Set it to true if you would like zPoolMinerLegacy to log to a file.
 LogMaxFileSize | number | The maximum size (in bytes) of the log file before roll over.
 ShowDriverVersionWarning | true or false | Set to true if you would like to get a warning if less than ideal driver for mining is detected.
 ShowInternetConnectionWarning | true or false | Set to true if you would like to get a warning if the internet connection is not available.
-DisableWindowsErrorReporting | true or false | Set it to true if you would like to disable windows error reporting. This will allow Hash-Kings to restart the miner in the case of the miner crashes.
+DisableWindowsErrorReporting | true or false | Set it to true if you would like to disable windows error reporting. This will allow zPoolMinerLegacy to restart the miner in the case of the miner crashes.
 UseNewSettingsPage | true or false | Set to true if you would like to use the new Settings form.
-NVIDIAP0State | true or false | When set to true, Hash-Kings would change all supported NVidia GPUs to P0 state. This will increase some performance on certain algorithms.
+NVIDIAP0State | true or false | When set to true, zPoolMinerLegacy would change all supported NVidia GPUs to P0 state. This will increase some performance on certain algorithms.
 ethminerDefaultBlockHeight | number | A fallback number that will be used if API call fails. This is only used for benchmarking.
 EthminerDagGenerationType | 0, 1, 2, 3 | Set ethminer DAG mode generation 0 - SingleKeep, 1 - Single, 2 - Sequential, 3 - Parallel.
 ApiBindPortPoolStart | number | Set the starting value (default is 5100) for miners API ports. When a new miner is created it will use an avaliable API port starting from the ApiBindPortPoolStart and higher.
-MinimumProfit | number | If set to any value more than 0 (USD), Hash-Kings will stop mining if the calculated profit falls below the set amount.
+MinimumProfit | number | If set to any value more than 0 (USD), zPoolMinerLegacy will stop mining if the calculated profit falls below the set amount.
 LastDevicesSettup | device settup list | This list is used for setting if a device is enabled or disabled.
-LastDevicesSettup\Enabled | true or false | Set to false if you would like to disable this device for benchmarking and mining by Hash-Kings.
+LastDevicesSettup\Enabled | true or false | Set to false if you would like to disable this device for benchmarking and mining by zPoolMinerLegacy.
 LastDevicesSettup\UUID | text | Used for unique identification purposes in the config file (**DO NOT EDIT**)
 LastDevicesSettup\Name | text | Used for identification purposes in the config file (**DO NOT EDIT**)
 
@@ -129,7 +129,7 @@ Parameter | Range | Description
 DeviceUUID | text | Used for unique identification purposes in the config file (**DO NOT EDIT**)
 DeviceName | text | Used for identification purposes in the config file (**DO NOT EDIT**)
 AlgorithmSettings | dictionary {key: text, value: Algorithm } | Key value paired dictionary with avaliable device algorithms settings. Keys should not be edited only Algorithm data.
-AlgorithmSettings\Algorithm\Hash-KingsID | number | Algorithm ID (**DO NOT EDIT**)
+AlgorithmSettings\Algorithm\zPoolID | number | Algorithm ID (**DO NOT EDIT**)
 AlgorithmSettings\Algorithm\MinerName | text | specific miner name setting (**DO NOT EDIT**)
 AlgorithmSettings\Algorithm\BenchmarkSpeed | number | Fine tune algorithm ratios by manually setting benchmark speeds for each algorithm.
 AlgorithmSettings\Algorithm\ExtraLaunchParameters | text | Additional launch parameters when launching miner and this algorithm.
@@ -159,14 +159,14 @@ I am having issues with my AMD GPU drivers.
 When uninstalling or reinstalling display drivers we suggest you to use Guru 3D Display Driver Uninstaller. This utility will make sure you get a clean driver state. You can <a href="http://www.guru3d.com/files-details/display-driver-uninstaller-download.html" target="_blank">download it here</a>.
 If you are using Windows 10, the AMD installer utility is sometimes unable to install drivers, therefore you have to install them manually. Download and run diver installer, let it extract the archive and then cancel it when prompted to execute actual install. After this go to Control Panel / System / Device Manager, Right click on your GPU, choose to Update driver manually and point to c:\AMD\[driver version] folder to finish the manual driver installation.
 
-I'm getting "Always ask before opening this file" when running Hash-Kings Miner
-> Make sure you un-check the checkbox "Always ask before opening this file" when Hash-Kings Miner is starting cpuminer, ccminer or sgminer back-end programs. This is needed because back-end programs will be executed several times while Hash-Kings Miner is running (auto-switching according to profitability and in case programs hangs) and you have to make sure these programs will be to executed automatically without your intervention.
+I'm getting "Always ask before opening this file" when running zPool Miner
+> Make sure you un-check the checkbox "Always ask before opening this file" when zPool Miner is starting cpuminer, ccminer or sgminer back-end programs. This is needed because back-end programs will be executed several times while zPool Miner is running (auto-switching according to profitability and in case programs hangs) and you have to make sure these programs will be to executed automatically without your intervention.
 
 Google Chrome is blocking the download of the application
-> Google Chrome falsely flags Hash-Kings Miner as a potentially unwanted program and thus prevents you from saving the program archive on your computer. This is an issue with Google Chrome and not with Hash-Kings Miner. Use another browser such as Firefox or Edge to download the file instead. Also, read 'My anti-virus is blocking the application' below.
+> Google Chrome falsely flags zPool Miner as a potentially unwanted program and thus prevents you from saving the program archive on your computer. This is an issue with Google Chrome and not with zPool Miner. Use another browser such as Firefox or Edge to download the file instead. Also, read 'My anti-virus is blocking the application' below.
 
 My anti-virus is blocking the application
-> Some anti-virus software might block Hash-Kings Miner as well as supporting back-end programs (cpuminer, ccminer, sgminer) due to false-positive matches. All software, included into Hash-Kings Miner has been verified and checked by our team and is absolutely virus/trojan free. Our service is well established and trusted among users, therefore you can fully trust software releases that are downloaded from our GitHub repository. However, make sure you **never download and run any files from other unknown sources**! If you downloaded the software package from our GitHub repository you can simply resolve the issues with false-positives by adding the files sgminer.exe, ccminer_sp.exe, ccminer_tpruvot.exe, cpuminer_x64_AVX.exe, cpuminer_x64_AVX2.exe and cpuminer_x64_SSE2.exe to anti-virus exception list.
+> Some anti-virus software might block zPool Miner as well as supporting back-end programs (cpuminer, ccminer, sgminer) due to false-positive matches. All software, included into zPool Miner has been verified and checked by our team and is absolutely virus/trojan free. Our service is well established and trusted among users, therefore you can fully trust software releases that are downloaded from our GitHub repository: https://github.com/Cryptominer937/zPoolMiner/releases. However, make sure you **never download and run any files from other unknown sources**! If you downloaded the software package from our GitHub repository you can simply resolve the issues with false-positives by adding the files sgminer.exe, ccminer_sp.exe, ccminer_tpruvot.exe, cpuminer_x64_AVX.exe, cpuminer_x64_AVX2.exe and cpuminer_x64_SSE2.exe to anti-virus exception list.
 
 I'm getting "Enqueueing kernel" errors on AMD GPUs
 > If you have very low amount of system memory (RAM), especially if lower than 4 GB, than you might encounter this kind of errors:
@@ -182,11 +182,11 @@ My benchmarking results are not accurate
 > Any kind of automation can only be done up to a particular level. We've spent significant effort to make benchmarking as good as possible, but it can't be made ideal. First of all, make sure to run Precise benchmark if Standard benchmark is not giving you satisfactory results. If you still see a deviation of actual mining speed from the one, calculated from benchmark, then you should manually enter these observed speed numbers from actual mining into config.json file or set them via the "Settings" button.
 
 Benchmarks on particular algorithms keep getting terminated on AMD GPUs
-> In some particular combinations of Windows version + AMD Driver version benchmarks on some algorithms keep getting terminated. If the particular algorithm that is being terminated is shown on pause on the front page (No orders - mining unavailable), then this is normal expected behaviour. However, if benchmark is also terminated for active algorithms, then you have to apply workaround solution. The solution is to copy all .cl files from the [..\bin\sgminer-5-3-0-general\kernel] folder into [c:\Users\[your_username_here]\appdata\local\temp\] folder and then re-run the benchmark for the algorithms that are terminated during benchmark.
+> In some particular combinations of Windows version + AMD Driver version benchmarks on some algorithms keep getting terminated. If the particular algorithm that is being terminated is shown on pause on the front page of zPool.com (No orders - mining unavailable), then this is normal expected behaviour. However, if benchmark is also terminated for active algorithms, then you have to apply workaround solution. The solution is to copy all .cl files from the [..\bin\sgminer-5-3-0-general\kernel] folder into [c:\Users\[your_username_here]\appdata\local\temp\] folder and then re-run the benchmark for the algorithms that are terminated during benchmark.
 
 # <a name="bugs"></a> How to report bugs and issues?
 
-To report bugs and issues please use the GitHub issue reporting tool: https://github.com/hash-kings/Hash-Kings-Miner-V3/issues. Any bugs and issues reports are very much appreciated since it helps us to improve Hash-Kings Miner. Thank you.
+To report bugs and issues please use the GitHub issue reporting tool: https://github.com/Cryptominer937/zPoolMiner/issues. Any bugs and issues reports are very much appreciated since it helps us to improve zPool Miner. Thank you.
 
 # <a name="references"></a> References
 

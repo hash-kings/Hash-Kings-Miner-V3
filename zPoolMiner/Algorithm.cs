@@ -193,7 +193,13 @@
                 {
                     if (BenchmarkSpeed > 0)
                     {
-                        payingRate += BenchmarkSpeed * Globals.CryptoMiner937Data[CryptoMiner937ID].paying * 0.000000001;
+                        try
+                        { payingRate += BenchmarkSpeed * Globals.CryptoMiner937Data[CryptoMiner937ID].paying * 0.000000001; }
+                        catch
+                        {
+                            payingRate += 0;
+                        }
+                        
                     }
                     if (SecondaryBenchmarkSpeed > 0 && IsDual())
                     {
