@@ -404,22 +404,23 @@ namespace zPoolMiner.Miners
                 var monversion = "Hash-Kings Miner V" + Application.ProductVersion;
                 var monstatus = "Running";
                 var monrunningminers = ""/*Runningminers go here*/;
-                var monserver = ConfigManager.GeneralConfig.MonServerurl;
+                var monserver = ConfigManager.GeneralConfig.MonServerurl + "/api/report.php";
                 var request = (HttpWebRequest)WebRequest.Create(monserver);
                 /* fetch last command line for each miner
-                Do this for each mining group
-                Name           = $RunningMiner.Name
-                Path           = Resolve-Path -Relative $RunningMiner.Path
-                Type           = $RunningMiner.Type -join ','
-                Algorithm      = $RunningMiner.Algorithms -join ','
-                Pool           = $RunningMiner.Miner.Pools.PSObject.Properties.Value.Name -join ','
-                CurrentSpeed   = $RunningMiner.HashRate -join ','
-                EstimatedSpeed = $RunningMiner.Miner.HashRates.PSObject.Properties.Value -join ','
-                Profit         = $RunningMiner.Miner.Profit
+                Do this for each mining group*/
+                var postData = "Name" + Uri.EscapeDataString(monrunningminers);
+                postData += "Path" + Uri.EscapeDataString("miner Path goes here");
+                postData += "Type" + Uri.EscapeDataString("Type of card EX. AMD");
+                postData += "Algorithm" + Uri.EscapeDataString("Current mining Algorithm");
+                postData += "Pool" + Uri.EscapeDataString("Pool Goes Here");
+                postData += "CurrentSpeed" + Uri.EscapeDataString("Actual hashrate goes here");
+                postData += "EstimatedSpeed" + Uri.EscapeDataString("Benchmark hashrate Goes Here");
+                postData += "Profit" + Uri.EscapeDataString("group profitability goes here");
+                /*
 
             Convert above data to Json
             Fetch Profit to Variable
-            $Profit = [string]([Math]::Round(($data | Measure-Object Profit -Sum).Sum, 8))
+            $Profit = [string]([Math]::Round(($data | Measure-Object Profit -Sum).Sum, 8)) 
             Send the request
             $Body = @{user = $Config.MonitoringUser; worker = $Config.WorkerName; version = $Version; status = $Status; profit = $Profit; data = $DataJSON}
         Try {
@@ -428,8 +429,6 @@ namespace zPoolMiner.Miners
         }
         Catch {
             Helpers.ConsolePrint("Monitoring", "Unable to send status to " monserver}*/
-                var postData = "Data1";
-                postData += "&Data2";
                 var data = Encoding.ASCII.GetBytes(postData);
                 request.Method = "POST";
                 request.ContentType = "application/x-www-form-urlencoded";
