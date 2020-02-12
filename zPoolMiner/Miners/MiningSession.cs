@@ -406,16 +406,23 @@ namespace zPoolMiner.Miners
                 var monrunningminers = ""/*Runningminers go here*/;
                 var monserver = ConfigManager.GeneralConfig.MonServerurl + "/api/report.php";
                 var request = (HttpWebRequest)WebRequest.Create(monserver);
+                var postData = "";
                 /* fetch last command line for each miner
                 Do this for each mining group*/
-                var postData = "Name" + Uri.EscapeDataString(monrunningminers);
-                postData += "Path" + Uri.EscapeDataString("miner Path goes here");
-                postData += "Type" + Uri.EscapeDataString("Type of card EX. AMD");
-                postData += "Algorithm" + Uri.EscapeDataString("Current mining Algorithm");
-                postData += "Pool" + Uri.EscapeDataString("Pool Goes Here");
-                postData += "CurrentSpeed" + Uri.EscapeDataString("Actual hashrate goes here");
-                postData += "EstimatedSpeed" + Uri.EscapeDataString("Benchmark hashrate Goes Here");
-                postData += "Profit" + Uri.EscapeDataString("group profitability goes here");
+                foreach (var cdev in ComputeDeviceManager.Avaliable.AllAvaliableDevices)
+                {
+                    if (cdev.Enabled)
+                    {
+                        postData += "Name" + Uri.EscapeDataString("Miner Name");
+                        postData += "Path" + Uri.EscapeDataString("miner Path goes here");
+                        postData += "Type" + Uri.EscapeDataString("Type of card EX. AMD");
+                        postData += "Algorithm" + Uri.EscapeDataString("Current mining Algorithm");
+                        postData += "Pool" + Uri.EscapeDataString("Pool Goes Here");
+                        postData += "CurrentSpeed" + Uri.EscapeDataString("Actual hashrate goes here");
+                        postData += "EstimatedSpeed" + Uri.EscapeDataString("Benchmark hashrate Goes Here");
+                        postData += "Profit" + Uri.EscapeDataString("group profitability goes here");
+                    };
+                }
                 /*
 
             Convert above data to Json
