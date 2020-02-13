@@ -53,7 +53,6 @@
             this.buttonStopMining = new System.Windows.Forms.Button();
             this.buttonBenchmark = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
-            this.buttonLogo = new System.Windows.Forms.Button();
             this.linkLabelChooseBTCWallet = new System.Windows.Forms.LinkLabel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.labelDemoMode = new System.Windows.Forms.Label();
@@ -80,6 +79,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.beepToggle = new zPoolMiner.Forms.Components.Toggle();
+            this.buttonLogo = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.flowLayoutPanelRates.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -99,6 +99,7 @@
             this.buttonStartMining.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonStartMining.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonStartMining.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonStartMining.FlatAppearance.BorderSize = 0;
             this.buttonStartMining.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.buttonStartMining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStartMining.Font = new System.Drawing.Font("Franklin Gothic Medium", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,7 +114,7 @@
             // 
             // textBoxBTCAddress
             // 
-            this.textBoxBTCAddress.Location = new System.Drawing.Point(560, 2);
+            this.textBoxBTCAddress.Location = new System.Drawing.Point(337, 13);
             this.textBoxBTCAddress.Name = "textBoxBTCAddress";
             this.textBoxBTCAddress.Size = new System.Drawing.Size(131, 21);
             this.textBoxBTCAddress.TabIndex = 1;
@@ -124,7 +125,7 @@
             // 
             this.labelServiceLocation.AutoSize = true;
             this.labelServiceLocation.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelServiceLocation.Location = new System.Drawing.Point(479, 36);
+            this.labelServiceLocation.Location = new System.Drawing.Point(256, 47);
             this.labelServiceLocation.Name = "labelServiceLocation";
             this.labelServiceLocation.Size = new System.Drawing.Size(91, 16);
             this.labelServiceLocation.TabIndex = 99;
@@ -143,7 +144,7 @@
             "The Blocks Factory - unused",
             "Future Pool",
             "Future Pool"});
-            this.comboBoxLocation.Location = new System.Drawing.Point(576, 31);
+            this.comboBoxLocation.Location = new System.Drawing.Point(353, 42);
             this.comboBoxLocation.Name = "comboBoxLocation";
             this.comboBoxLocation.Size = new System.Drawing.Size(121, 24);
             this.comboBoxLocation.TabIndex = 0;
@@ -154,7 +155,7 @@
             // 
             this.labelBitcoinAddress.AutoSize = true;
             this.labelBitcoinAddress.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelBitcoinAddress.Location = new System.Drawing.Point(468, 5);
+            this.labelBitcoinAddress.Location = new System.Drawing.Point(245, 16);
             this.labelBitcoinAddress.Name = "labelBitcoinAddress";
             this.labelBitcoinAddress.Size = new System.Drawing.Size(86, 16);
             this.labelBitcoinAddress.TabIndex = 99;
@@ -278,7 +279,7 @@
             // 
             this.labelWorkerName.AutoSize = true;
             this.labelWorkerName.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelWorkerName.Location = new System.Drawing.Point(342, 47);
+            this.labelWorkerName.Location = new System.Drawing.Point(119, 58);
             this.labelWorkerName.Name = "labelWorkerName";
             this.labelWorkerName.Size = new System.Drawing.Size(78, 16);
             this.labelWorkerName.TabIndex = 99;
@@ -287,7 +288,7 @@
             // 
             // textBoxWorkerName
             // 
-            this.textBoxWorkerName.Location = new System.Drawing.Point(434, 44);
+            this.textBoxWorkerName.Location = new System.Drawing.Point(211, 55);
             this.textBoxWorkerName.Name = "textBoxWorkerName";
             this.textBoxWorkerName.Size = new System.Drawing.Size(28, 21);
             this.textBoxWorkerName.TabIndex = 2;
@@ -302,6 +303,7 @@
             this.buttonStopMining.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonStopMining.Enabled = false;
             this.buttonStopMining.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonStopMining.FlatAppearance.BorderSize = 0;
             this.buttonStopMining.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.buttonStopMining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStopMining.ForeColor = System.Drawing.Color.Transparent;
@@ -320,6 +322,7 @@
             this.buttonBenchmark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonBenchmark.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonBenchmark.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonBenchmark.FlatAppearance.BorderSize = 0;
             this.buttonBenchmark.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonBenchmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBenchmark.Font = new System.Drawing.Font("Franklin Gothic Medium", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -339,6 +342,7 @@
             this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonSettings.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonSettings.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonSettings.FlatAppearance.BorderSize = 0;
             this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSettings.ForeColor = System.Drawing.Color.Transparent;
@@ -349,24 +353,6 @@
             this.buttonSettings.TabIndex = 5;
             this.buttonSettings.UseVisualStyleBackColor = false;
             this.buttonSettings.Click += new System.EventHandler(this.ButtonSettings_Click);
-            // 
-            // buttonLogo
-            // 
-            this.buttonLogo.BackColor = System.Drawing.Color.Transparent;
-            this.buttonLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonLogo.FlatAppearance.BorderSize = 0;
-            this.buttonLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogo.Image = global::zPoolMiner.Properties.Resources.HK_Main_Small;
-            this.buttonLogo.Location = new System.Drawing.Point(0, 0);
-            this.buttonLogo.MaximumSize = new System.Drawing.Size(210, 67);
-            this.buttonLogo.Name = "buttonLogo";
-            this.buttonLogo.Size = new System.Drawing.Size(210, 61);
-            this.buttonLogo.TabIndex = 11;
-            this.buttonLogo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.buttonLogo.UseMnemonic = false;
-            this.buttonLogo.UseVisualStyleBackColor = false;
-            this.buttonLogo.Click += new System.EventHandler(this.ButtonLogo_Click);
             // 
             // linkLabelChooseBTCWallet
             // 
@@ -390,7 +376,7 @@
             this.labelDemoMode.BackColor = System.Drawing.Color.Transparent;
             this.labelDemoMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDemoMode.ForeColor = System.Drawing.Color.Red;
-            this.labelDemoMode.Location = new System.Drawing.Point(6, 39);
+            this.labelDemoMode.Location = new System.Drawing.Point(-181, -15);
             this.labelDemoMode.Name = "labelDemoMode";
             this.labelDemoMode.Size = new System.Drawing.Size(498, 25);
             this.labelDemoMode.TabIndex = 100;
@@ -450,6 +436,7 @@
             this.buttonHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonHelp.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonHelp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonHelp.FlatAppearance.BorderSize = 0;
             this.buttonHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHelp.ForeColor = System.Drawing.Color.Transparent;
@@ -489,6 +476,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.Controls.Add(this.buttonLogo);
+            this.panel6.Controls.Add(this.labelDemoMode);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(182, 0);
             this.panel6.Name = "panel6";
@@ -510,9 +498,9 @@
             this.panel3.Controls.Add(this.comboBoxLocation);
             this.panel3.Controls.Add(this.textBoxWorkerName);
             this.panel3.Controls.Add(this.labelServiceLocation);
-            this.panel3.Location = new System.Drawing.Point(1, 2);
+            this.panel3.Location = new System.Drawing.Point(1, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(706, 62);
+            this.panel3.Size = new System.Drawing.Size(706, 76);
             this.panel3.TabIndex = 112;
             // 
             // label5
@@ -550,7 +538,7 @@
             this.labelDevfeeStatus.AutoSize = true;
             this.labelDevfeeStatus.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDevfeeStatus.ForeColor = System.Drawing.Color.White;
-            this.labelDevfeeStatus.Location = new System.Drawing.Point(455, 15);
+            this.labelDevfeeStatus.Location = new System.Drawing.Point(-2, 47);
             this.labelDevfeeStatus.Name = "labelDevfeeStatus";
             this.labelDevfeeStatus.Size = new System.Drawing.Size(116, 26);
             this.labelDevfeeStatus.TabIndex = 100;
@@ -700,6 +688,24 @@
             this.beepToggle.UseVisualStyleBackColor = false;
             this.beepToggle.CheckedChanged += new System.EventHandler(this.beepToggle_CheckedChanged);
             // 
+            // buttonLogo
+            // 
+            this.buttonLogo.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonLogo.FlatAppearance.BorderSize = 0;
+            this.buttonLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogo.Image = global::zPoolMiner.Properties.Resources.HK_Main_Small;
+            this.buttonLogo.Location = new System.Drawing.Point(0, 0);
+            this.buttonLogo.MaximumSize = new System.Drawing.Size(210, 67);
+            this.buttonLogo.Name = "buttonLogo";
+            this.buttonLogo.Size = new System.Drawing.Size(210, 61);
+            this.buttonLogo.TabIndex = 11;
+            this.buttonLogo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.buttonLogo.UseMnemonic = false;
+            this.buttonLogo.UseVisualStyleBackColor = false;
+            this.buttonLogo.Click += new System.EventHandler(this.ButtonLogo_Click);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
@@ -714,7 +720,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.linkLabelNewVersion);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.labelDemoMode);
             this.Controls.Add(this.linkLabelChooseBTCWallet);
             this.Controls.Add(this.statusStrip1);
             this.Enabled = false;
@@ -738,6 +743,7 @@
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -815,11 +821,6 @@
         /// Defines the toolStripStatusLabelBalanceDollarValue
         /// </summary>
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelBalanceDollarValue;
-
-        /// <summary>
-        /// Defines the buttonLogo
-        /// </summary>
-        private System.Windows.Forms.Button buttonLogo;
 
         /// <summary>
         /// Defines the toolStripStatusLabel10
@@ -928,5 +929,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonLogo;
     }
 }

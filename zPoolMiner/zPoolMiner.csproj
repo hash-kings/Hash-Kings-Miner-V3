@@ -58,13 +58,19 @@
     <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\logo.ico</ApplicationIcon>
+    <ApplicationIcon>logoV2.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release2|x64'">
+    <OutputPath>bin\x64\Release2\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release2|AnyCPU'">
+    <OutputPath>bin\Release2\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -172,6 +178,12 @@
     </Compile>
     <Compile Include="Forms\Components\Toggle.Designer.cs">
       <DependentUpon>Toggle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form_Miner_Outputs.cs">
       <SubType>Form</SubType>
@@ -465,7 +477,9 @@
     <None Include="OnGPUsLost.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -477,6 +491,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="logoV2.ico" />
     <Content Include="MyDownloader.Core.csproj" />
     <Content Include="Resources\button_benchmark.png" />
     <None Include="Resources\button_benchmark1.png" />
@@ -493,6 +508,7 @@
     <Content Include="Resources\HK Main Small.png" />
     <None Include="Resources\HK Main Small1.png" />
     <Content Include="Resources\HK Main Trans !.png" />
+    <Content Include="Resources\logoV2.ico" />
     <Content Include="tiny.ico" />
     <None Include="Resources\black-paper.png" />
     <Content Include="Resources\info_black_18.png" />
