@@ -445,7 +445,7 @@
                 }
             }
             string ghv = CryptoStats.GetVersion("");
-            Helpers.ConsolePrint("GITHUB", ghv);
+            //Helpers.ConsolePrint("GITHUB", ghv);
             if (ghv != null)
             {
                 CryptoStats.SetVersion(ghv);
@@ -972,7 +972,7 @@
             if (ver == null) return;
             //var programVersion = "Fork_Fix_"+ConfigManager.GeneralConfig.ForkFixVersion.ToString().Replace(",",".");
             var programVersion = ConfigManager.GeneralConfig.ConfigFileVersion.ToString().Replace(".", ",");
-            Helpers.ConsolePrint("Program version: ", programVersion);
+            //Helpers.ConsolePrint("Program version: ", programVersion);
             //var ret = programVersion.CompareTo(ver);
             if (ver.Length < 1)
             {
@@ -980,11 +980,11 @@
             }
             ver = ver.Replace("-Beta", "");
             ver2 = ver2.Replace("-Beta", "");
-            Helpers.ConsolePrint("Github version: ", ver);
+            //Helpers.ConsolePrint("Github version: ", ver);
             double programVersionn = double.Parse(programVersion, CultureInfo.InvariantCulture);
-            Helpers.ConsolePrint("Program version: ", programVersionn.ToString());
+            //Helpers.ConsolePrint("Program version: ", programVersionn.ToString());
             double vern = double.Parse(ver, CultureInfo.InvariantCulture);
-            Helpers.ConsolePrint("Github version: ", vern.ToString());
+            //Helpers.ConsolePrint("Github version: ", vern.ToString());
             //if (ret < 0 || (ret == 0 && BetaAlphaPostfixString != ""))
             if (programVersionn < vern)
             {

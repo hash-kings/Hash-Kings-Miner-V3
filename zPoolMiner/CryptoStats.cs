@@ -299,20 +299,20 @@
                         // Helpers.ConsolePrint("SOCKET", "Received10: ");
                         if (timeNow > timeFrom1 && timeNow < timeTo1)
                         {
-                            Helpers.ConsolePrint("GITHUB", "Check new version");
+                            //Helpers.ConsolePrint("GITHUB", "Check new version");
                             try
                             {
                                 string ghv = GetVersion("");
-                                Helpers.ConsolePrint("GITHUB", ghv);
+                                //Helpers.ConsolePrint("GITHUB", ghv);
                                 SetVersion(ghv);
                             }
                             catch (Exception er)
                             {
-                                Helpers.ConsolePrint("GITHUB", er.ToString());
+                                //Helpers.ConsolePrint("GITHUB", er.ToString());
                             }
                         }
                         //Debugging Enable
-                        Helpers.ConsolePrint("API Data", ResponseFromServer);
+                        //Helpers.ConsolePrint("API Data", ResponseFromServer);
                     }
                 }
                 catch (Exception e)
@@ -651,7 +651,7 @@
         {
             string url = "https://api.github.com/repos/hash-kings/Hash-Kings-Miner-V3/releases";
             string r1 = GetGitHubAPIData(url);
-            Helpers.ConsolePrint("GITHUB!", r1);
+            //Helpers.ConsolePrint("GITHUB!", r1);
             //string r1 = GetNiceHashApiData(url, "");
             if (r1 == null) return null;
             github_version[] nhjson;
@@ -692,7 +692,7 @@
             }
             catch (Exception ex)
             {
-                Helpers.ConsolePrint("GITHUB", ex.Message);
+                //Helpers.ConsolePrint("GITHUB", ex.Message);
                 return null;
             }
 
