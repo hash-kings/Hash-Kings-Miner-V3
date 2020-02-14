@@ -10,6 +10,7 @@
     using zPoolMiner.Miners;
     using zPoolMiner.Miners.Grouping;
     using zPoolMiner.Miners.Parsing;
+    using zPoolMiner.Forms;
 
     /// <summary>
     /// Defines the <see cref="Form_Settings" />
@@ -184,7 +185,7 @@
             toolTip1.SetToolTip(comboBox_DagLoadMode, International.GetText("Form_Settings_ToolTip_DagGeneration"));
             toolTip1.SetToolTip(label_DagGeneration, International.GetText("Form_Settings_ToolTip_DagGeneration"));
             toolTip1.SetToolTip(pictureBox_DagGeneration, International.GetText("Form_Settings_ToolTip_DagGeneration"));
-            
+
 
             toolTip1.SetToolTip(checkBox_DisableDetectionNVIDIA, String.Format(International.GetText("Form_Settings_ToolTip_checkBox_DisableDetection"), "NVIDIA"));
             toolTip1.SetToolTip(checkBox_DisableDetectionAMD, String.Format(International.GetText("Form_Settings_ToolTip_checkBox_DisableDetection"), "AMD"));
@@ -253,7 +254,7 @@
             // internet connection mining check
             toolTip1.SetToolTip(checkBox_IdleWhenNoInternetAccess, International.GetText("Form_Settings_ToolTip_ContinueMiningIfNoInternetAccess"));
             toolTip1.SetToolTip(pictureBox_IdleWhenNoInternetAccess, International.GetText("Form_Settings_ToolTip_ContinueMiningIfNoInternetAccess"));
-            
+
 
             toolTip1.SetToolTip(pictureBox_SwitchProfitabilityThreshold, International.GetText("Form_Settings_ToolTip_SwitchProfitabilityThreshold"));
             toolTip1.SetToolTip(label_SwitchProfitabilityThreshold, International.GetText("Form_Settings_ToolTip_SwitchProfitabilityThreshold"));
@@ -301,6 +302,7 @@
             checkBox_MinimizeMiningWindows.Text = International.GetText("Form_Settings_General_MinimizeMiningWindows");
             checkBox_RunScriptOnCUDA_GPU_Lost.Text = International.GetText("Form_Settings_General_RunScriptOnCUDA_GPU_Lost");
 
+            checkbox_Group_same_devices.Text = "Group Like Cards";
             label_Language.Text = International.GetText("Form_Settings_General_Language") + ":";
             label_MinIdleSeconds.Text = International.GetText("Form_Settings_General_MinIdleSeconds") + ":";
             label_MinerRestartDelayMS.Text = International.GetText("Form_Settings_General_MinerRestartDelayMS") + ":";
@@ -319,7 +321,7 @@
 
             label_displayCurrency.Text = International.GetText("Form_Settings_DisplayCurrency");
 
-            
+
 
             // device enabled listview translation
             devicesListViewEnableControl1.InitLocale();
@@ -381,6 +383,7 @@
                 checkBox_AllowMultipleInstances.CheckedChanged += new EventHandler(GeneralCheckBoxes_CheckedChanged);
                 checkBox_MinimizeMiningWindows.CheckedChanged += new EventHandler(GeneralCheckBoxes_CheckedChanged);
                 checkBox_RunScriptOnCUDA_GPU_Lost.CheckedChanged += new EventHandler(GeneralCheckBoxes_CheckedChanged);
+                checkbox_Group_same_devices.CheckedChanged += GeneralCheckBoxes_CheckedChanged;
             }
             // Add EventHandler for all the general tab's textboxes
             {
@@ -489,8 +492,9 @@
                 checkBox_MinimizeMiningWindows.Checked = ConfigManager.GeneralConfig.MinimizeMiningWindows;
                 checkBox_MinimizeMiningWindows.Enabled = !ConfigManager.GeneralConfig.HideMiningWindows;
                 checkBox_RunScriptOnCUDA_GPU_Lost.Checked = ConfigManager.GeneralConfig.RunScriptOnCUDA_GPU_Lost;
+                checkbox_Group_same_devices.Checked = ConfigManager.GeneralConfig.Group_same_devices;
             }
-            
+
             // Textboxes
             {
                 /*textBox_Zpool_Wallet.Text = ConfigManager.GeneralConfig.zpoolAddress;
@@ -532,7 +536,7 @@
 
             // set custom control referances
             {
-                
+
 
                 // here we want all devices
                 devicesListViewEnableControl1.SetComputeDevices(ComputeDeviceManager.Avaliable.AllAvaliableDevices);
@@ -634,6 +638,7 @@
             ConfigManager.GeneralConfig.AllowMultipleInstances = checkBox_AllowMultipleInstances.Checked;
             ConfigManager.GeneralConfig.MinimizeMiningWindows = checkBox_MinimizeMiningWindows.Checked;
             ConfigManager.GeneralConfig.RunScriptOnCUDA_GPU_Lost = checkBox_RunScriptOnCUDA_GPU_Lost.Checked;
+            ConfigManager.GeneralConfig.Group_same_devices = checkbox_Group_same_devices.Checked;
         }
 
         /// <summary>
@@ -1120,6 +1125,13 @@
             }
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+
+        {
+            Form1 frm = new Form1();
+            frm.ShowDialog();
+
+
+        }
     }
 }

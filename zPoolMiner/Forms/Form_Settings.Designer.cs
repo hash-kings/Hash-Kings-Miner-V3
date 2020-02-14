@@ -78,6 +78,7 @@
             this.textBox_MinerRestartDelayMS = new System.Windows.Forms.TextBox();
             this.textBox_MinerAPIQueryInterval = new System.Windows.Forms.TextBox();
             this.groupBox_Misc = new System.Windows.Forms.GroupBox();
+            this.checkbox_Group_same_devices = new System.Windows.Forms.CheckBox();
             this.pictureBox_RunScriptOnCUDA_GPU_Lost = new System.Windows.Forms.PictureBox();
             this.checkBox_RunScriptOnCUDA_GPU_Lost = new System.Windows.Forms.CheckBox();
             this.pictureBox_ShowInternetConnectionWarning = new System.Windows.Forms.PictureBox();
@@ -136,9 +137,6 @@
             this.label_MinProfit = new System.Windows.Forms.Label();
             this.tabPageDevicesAlgos = new System.Windows.Forms.TabPage();
             this.groupBoxAlgorithmSettings = new System.Windows.Forms.GroupBox();
-            this.algorithmsListView1 = new zPoolMiner.Forms.Components.AlgorithmsListView();
-            this.devicesListViewEnableControl1 = new zPoolMiner.Forms.Components.DevicesListViewEnableControl();
-            this.algorithmSettingsControl1 = new zPoolMiner.Forms.Components.AlgorithmSettingsControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
@@ -177,6 +175,7 @@
             this.textBox_HashRefinery_Wallet = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox_blazepool = new System.Windows.Forms.CheckBox();
             this.checkBox_blockmunch = new System.Windows.Forms.CheckBox();
@@ -192,6 +191,9 @@
             this.buttonSaveClose = new System.Windows.Forms.Button();
             this.buttonDefaults = new System.Windows.Forms.Button();
             this.buttonCloseNoSave = new System.Windows.Forms.Button();
+            this.algorithmsListView1 = new zPoolMiner.Forms.Components.AlgorithmsListView();
+            this.devicesListViewEnableControl1 = new zPoolMiner.Forms.Components.DevicesListViewEnableControl();
+            this.algorithmSettingsControl1 = new zPoolMiner.Forms.Components.AlgorithmSettingsControl();
             this.tabControlGeneral.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
             this.groupBox_Localization.SuspendLayout();
@@ -774,6 +776,7 @@
             // 
             // groupBox_Misc
             // 
+            this.groupBox_Misc.Controls.Add(this.checkbox_Group_same_devices);
             this.groupBox_Misc.Controls.Add(this.pictureBox_RunScriptOnCUDA_GPU_Lost);
             this.groupBox_Misc.Controls.Add(this.checkBox_RunScriptOnCUDA_GPU_Lost);
             this.groupBox_Misc.Controls.Add(this.pictureBox_ShowInternetConnectionWarning);
@@ -818,6 +821,17 @@
             this.groupBox_Misc.TabIndex = 391;
             this.groupBox_Misc.TabStop = false;
             this.groupBox_Misc.Text = "Misc:";
+            // 
+            // checkbox_Group_same_devices
+            // 
+            this.checkbox_Group_same_devices.AutoSize = true;
+            this.checkbox_Group_same_devices.Location = new System.Drawing.Point(6, 382);
+            this.checkbox_Group_same_devices.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.checkbox_Group_same_devices.Name = "checkbox_Group_same_devices";
+            this.checkbox_Group_same_devices.Size = new System.Drawing.Size(97, 17);
+            this.checkbox_Group_same_devices.TabIndex = 374;
+            this.checkbox_Group_same_devices.Text = "Group Devices";
+            this.checkbox_Group_same_devices.UseVisualStyleBackColor = true;
             // 
             // pictureBox_RunScriptOnCUDA_GPU_Lost
             // 
@@ -1500,40 +1514,6 @@
             this.groupBoxAlgorithmSettings.TabStop = false;
             this.groupBoxAlgorithmSettings.Text = "Algorithm settings for selected device:";
             // 
-            // algorithmsListView1
-            // 
-            this.algorithmsListView1.BenchmarkCalculation = null;
-            this.algorithmsListView1.ComunicationInterface = null;
-            this.algorithmsListView1.IsInBenchmark = false;
-            this.algorithmsListView1.Location = new System.Drawing.Point(6, 15);
-            this.algorithmsListView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.algorithmsListView1.Name = "algorithmsListView1";
-            this.algorithmsListView1.Size = new System.Drawing.Size(648, 184);
-            this.algorithmsListView1.TabIndex = 2;
-            // 
-            // devicesListViewEnableControl1
-            // 
-            this.devicesListViewEnableControl1.AutoSize = true;
-            this.devicesListViewEnableControl1.BackColor = System.Drawing.SystemColors.Window;
-            this.devicesListViewEnableControl1.BenchmarkCalculation = null;
-            this.devicesListViewEnableControl1.FirstColumnText = "Enabled";
-            this.devicesListViewEnableControl1.IsInBenchmark = false;
-            this.devicesListViewEnableControl1.IsMining = false;
-            this.devicesListViewEnableControl1.Location = new System.Drawing.Point(6, 6);
-            this.devicesListViewEnableControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.devicesListViewEnableControl1.Name = "devicesListViewEnableControl1";
-            this.devicesListViewEnableControl1.SaveToGeneralConfig = false;
-            this.devicesListViewEnableControl1.Size = new System.Drawing.Size(352, 172);
-            this.devicesListViewEnableControl1.TabIndex = 397;
-            // 
-            // algorithmSettingsControl1
-            // 
-            this.algorithmSettingsControl1.Location = new System.Drawing.Point(366, 0);
-            this.algorithmSettingsControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.algorithmSettingsControl1.Name = "algorithmSettingsControl1";
-            this.algorithmSettingsControl1.Size = new System.Drawing.Size(238, 193);
-            this.algorithmSettingsControl1.TabIndex = 396;
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.panel3);
@@ -1915,6 +1895,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.checkBox_blazepool);
             this.panel1.Controls.Add(this.checkBox_blockmunch);
@@ -1932,6 +1913,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(132, 408);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(22, 324);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 69);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Test Button For integrated Browser";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -2102,6 +2094,40 @@
             this.buttonCloseNoSave.Text = "&Close without Saving";
             this.buttonCloseNoSave.UseVisualStyleBackColor = true;
             this.buttonCloseNoSave.Click += new System.EventHandler(this.ButtonCloseNoSave_Click);
+            // 
+            // algorithmsListView1
+            // 
+            this.algorithmsListView1.BenchmarkCalculation = null;
+            this.algorithmsListView1.ComunicationInterface = null;
+            this.algorithmsListView1.IsInBenchmark = false;
+            this.algorithmsListView1.Location = new System.Drawing.Point(6, 15);
+            this.algorithmsListView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.algorithmsListView1.Name = "algorithmsListView1";
+            this.algorithmsListView1.Size = new System.Drawing.Size(648, 184);
+            this.algorithmsListView1.TabIndex = 2;
+            // 
+            // devicesListViewEnableControl1
+            // 
+            this.devicesListViewEnableControl1.AutoSize = true;
+            this.devicesListViewEnableControl1.BackColor = System.Drawing.SystemColors.Window;
+            this.devicesListViewEnableControl1.BenchmarkCalculation = null;
+            this.devicesListViewEnableControl1.FirstColumnText = "Enabled";
+            this.devicesListViewEnableControl1.IsInBenchmark = false;
+            this.devicesListViewEnableControl1.IsMining = false;
+            this.devicesListViewEnableControl1.Location = new System.Drawing.Point(6, 6);
+            this.devicesListViewEnableControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.devicesListViewEnableControl1.Name = "devicesListViewEnableControl1";
+            this.devicesListViewEnableControl1.SaveToGeneralConfig = false;
+            this.devicesListViewEnableControl1.Size = new System.Drawing.Size(352, 172);
+            this.devicesListViewEnableControl1.TabIndex = 397;
+            // 
+            // algorithmSettingsControl1
+            // 
+            this.algorithmSettingsControl1.Location = new System.Drawing.Point(366, 0);
+            this.algorithmSettingsControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.algorithmSettingsControl1.Name = "algorithmSettingsControl1";
+            this.algorithmSettingsControl1.Size = new System.Drawing.Size(238, 193);
+            this.algorithmSettingsControl1.TabIndex = 396;
             // 
             // Form_Settings
             // 
@@ -2637,5 +2663,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox_devapi;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkbox_Group_same_devices;
     }
 }
