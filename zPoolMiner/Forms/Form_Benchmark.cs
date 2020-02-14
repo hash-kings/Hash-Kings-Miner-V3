@@ -846,6 +846,7 @@
         /// </summary>
         private void NextBenchmark()
         {
+            ConfigManager.CommitBenchmarks();
             if (_bechmarkCurrentIndex > -1)
             {
                 StepUpBenchmarkStepProgress();

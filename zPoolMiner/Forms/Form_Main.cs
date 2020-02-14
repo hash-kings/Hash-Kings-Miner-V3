@@ -444,7 +444,12 @@
                     --Globals.FirstNetworkCheckTimeoutTries;
                 }
             }
-
+            string ghv = CryptoStats.GetVersion("");
+            Helpers.ConsolePrint("GITHUB", ghv);
+            if (ghv != null)
+            {
+                CryptoStats.SetVersion(ghv);
+            }
             LoadingScreen.IncreaseLoadCounterAndMessage(International.GetText("Form_Main_loadtext_GetBTCRate"));
 
             BitcoinExchangeCheck = new Timer();
@@ -962,17 +967,31 @@
         /// <param name="e">The <see cref="EventArgs"/></param>
         private void VersionUpdateCallback(object sender, EventArgs e)
         {
-            var ver = CryptoStats.Version;
+            var ver = CryptoStats.Version.Replace(".", ",");
+            var ver2 = CryptoStats.Version;
             if (ver == null) return;
-
-            Version programVersion = new Version(Application.ProductVersion);
-            Version onlineVersion = new Version(ver);
-            int ret = programVersion.CompareTo(onlineVersion);
-
-            if (ret < 0 || (ret == 0 && _betaAlphaPostfixString != ""))
+            //var programVersion = "Fork_Fix_"+ConfigManager.GeneralConfig.ForkFixVersion.ToString().Replace(",",".");
+            var programVersion = ConfigManager.GeneralConfig.ConfigFileVersion.ToString().Replace(".", ",");
+            Helpers.ConsolePrint("Program version: ", programVersion);
+            //var ret = programVersion.CompareTo(ver);
+            if (ver.Length < 1)
             {
-                SetVersionLabel(String.Format(International.GetText("Form_Main_new_version_released"), ver));
-                VisitURLNew = Links.VisitURLNew + ver;
+                return;
+            }
+            ver = ver.Replace("-Beta", "");
+            ver2 = ver2.Replace("-Beta", "");
+            Helpers.ConsolePrint("Github version: ", ver);
+            double programVersionn = double.Parse(programVersion, CultureInfo.InvariantCulture);
+            Helpers.ConsolePrint("Program version: ", programVersionn.ToString());
+            double vern = double.Parse(ver, CultureInfo.InvariantCulture);
+            Helpers.ConsolePrint("Github version: ", vern.ToString());
+            //if (ret < 0 || (ret == 0 && BetaAlphaPostfixString != ""))
+            if (programVersionn < vern)
+            {
+                Helpers.ConsolePrint("Old version detected. Update needed.", "");
+                SetVersionLabel(string.Format(International.GetText("Form_Main_new_version_released").Replace("v{0}", "{0}"), "V " + ver2));
+                //_visitUrlNew = Links.VisitUrlNew + ver;
+                VisitURLNew = Links.VisitURLNew;
             }
         }
 
@@ -988,14 +1007,14 @@
         /// <param name="text">The <see cref="string"/></param>
         private void SetVersionLabel(string text)
         {
-            if (linkLabelNewVersion.InvokeRequired)
+            if (LinkLabelUpdate.InvokeRequired)
             {
                 SetVersionLabelCallback d = new SetVersionLabelCallback(SetVersionLabel);
                 Invoke(d, new object[] { text });
             }
             else
             {
-                linkLabelNewVersion.Text = text;
+                LinkLabelUpdate.Text = text;
             }
         }
 
@@ -1054,11 +1073,11 @@
         }
 
         /// <summary>
-        /// The LinkLabelNewVersion_LinkClicked
+        /// The LinkLabelUpdate_LinkClicked
         /// </summary>
         /// <param name="sender">The <see cref="object"/></param>
         /// <param name="e">The <see cref="LinkLabelLinkClickedEventArgs"/></param>
-        private void LinkLabelNewVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabelUpdate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start(VisitURLNew);
         }

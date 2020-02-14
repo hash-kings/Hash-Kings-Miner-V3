@@ -61,10 +61,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_NotProfitable = new System.Windows.Forms.Label();
             this.buttonHelp = new System.Windows.Forms.Button();
-            this.linkLabelNewVersion = new System.Windows.Forms.LinkLabel();
+            this.LinkLabelUpdate = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.buttonLogo = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -79,7 +80,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.beepToggle = new zPoolMiner.Forms.Components.Toggle();
-            this.buttonLogo = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.flowLayoutPanelRates.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -448,14 +448,18 @@
             this.buttonHelp.UseVisualStyleBackColor = false;
             this.buttonHelp.Click += new System.EventHandler(this.ButtonHelp_Click);
             // 
-            // linkLabelNewVersion
+            // LinkLabelUpdate
             // 
-            this.linkLabelNewVersion.AutoSize = true;
-            this.linkLabelNewVersion.Location = new System.Drawing.Point(292, 254);
-            this.linkLabelNewVersion.Name = "linkLabelNewVersion";
-            this.linkLabelNewVersion.Size = new System.Drawing.Size(0, 16);
-            this.linkLabelNewVersion.TabIndex = 110;
-            this.linkLabelNewVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelNewVersion_LinkClicked);
+            this.LinkLabelUpdate.AutoSize = true;
+            this.LinkLabelUpdate.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LinkLabelUpdate.Font = new System.Drawing.Font("Franklin Gothic Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinkLabelUpdate.LinkArea = new System.Windows.Forms.LinkArea(25, 25);
+            this.LinkLabelUpdate.Location = new System.Drawing.Point(704, 0);
+            this.LinkLabelUpdate.Name = "LinkLabelUpdate";
+            this.LinkLabelUpdate.Size = new System.Drawing.Size(0, 37);
+            this.LinkLabelUpdate.TabIndex = 110;
+            this.LinkLabelUpdate.UseCompatibleTextRendering = true;
+            this.LinkLabelUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelUpdate_LinkClicked);
             // 
             // panel1
             // 
@@ -483,6 +487,24 @@
             this.panel6.Size = new System.Drawing.Size(210, 67);
             this.panel6.TabIndex = 114;
             // 
+            // buttonLogo
+            // 
+            this.buttonLogo.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonLogo.FlatAppearance.BorderSize = 0;
+            this.buttonLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogo.Image = global::zPoolMiner.Properties.Resources.HK_Main_Small;
+            this.buttonLogo.Location = new System.Drawing.Point(0, 0);
+            this.buttonLogo.MaximumSize = new System.Drawing.Size(210, 67);
+            this.buttonLogo.Name = "buttonLogo";
+            this.buttonLogo.Size = new System.Drawing.Size(210, 61);
+            this.buttonLogo.TabIndex = 11;
+            this.buttonLogo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.buttonLogo.UseMnemonic = false;
+            this.buttonLogo.UseVisualStyleBackColor = false;
+            this.buttonLogo.Click += new System.EventHandler(this.ButtonLogo_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
@@ -492,13 +514,14 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.labelDevfeeStatus);
+            this.panel3.Controls.Add(this.LinkLabelUpdate);
             this.panel3.Controls.Add(this.labelBitcoinAddress);
             this.panel3.Controls.Add(this.textBoxBTCAddress);
             this.panel3.Controls.Add(this.labelWorkerName);
             this.panel3.Controls.Add(this.comboBoxLocation);
             this.panel3.Controls.Add(this.textBoxWorkerName);
             this.panel3.Controls.Add(this.labelServiceLocation);
-            this.panel3.Location = new System.Drawing.Point(1, 0);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(706, 76);
             this.panel3.TabIndex = 112;
@@ -556,7 +579,7 @@
             this.panel5.Controls.Add(this.devicesListViewEnableControl1);
             this.panel5.Location = new System.Drawing.Point(1, 137);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(706, 253);
+            this.panel5.Size = new System.Drawing.Size(700, 248);
             this.panel5.TabIndex = 114;
             // 
             // deviceStats1
@@ -574,7 +597,7 @@
             this.deviceStats1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.deviceStats1.Name = "deviceStats1";
             this.deviceStats1.SaveToGeneralConfig = false;
-            this.deviceStats1.Size = new System.Drawing.Size(374, 244);
+            this.deviceStats1.Size = new System.Drawing.Size(1073, 492);
             this.deviceStats1.TabIndex = 110;
             // 
             // devicesListViewEnableControl1
@@ -593,7 +616,7 @@
             this.devicesListViewEnableControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.devicesListViewEnableControl1.Name = "devicesListViewEnableControl1";
             this.devicesListViewEnableControl1.SaveToGeneralConfig = false;
-            this.devicesListViewEnableControl1.Size = new System.Drawing.Size(319, 244);
+            this.devicesListViewEnableControl1.Size = new System.Drawing.Size(318, 244);
             this.devicesListViewEnableControl1.TabIndex = 109;
             // 
             // tempLower
@@ -688,24 +711,6 @@
             this.beepToggle.UseVisualStyleBackColor = false;
             this.beepToggle.CheckedChanged += new System.EventHandler(this.beepToggle_CheckedChanged);
             // 
-            // buttonLogo
-            // 
-            this.buttonLogo.BackColor = System.Drawing.Color.Transparent;
-            this.buttonLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonLogo.FlatAppearance.BorderSize = 0;
-            this.buttonLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogo.Image = global::zPoolMiner.Properties.Resources.HK_Main_Small;
-            this.buttonLogo.Location = new System.Drawing.Point(0, 0);
-            this.buttonLogo.MaximumSize = new System.Drawing.Size(210, 67);
-            this.buttonLogo.Name = "buttonLogo";
-            this.buttonLogo.Size = new System.Drawing.Size(210, 61);
-            this.buttonLogo.TabIndex = 11;
-            this.buttonLogo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.buttonLogo.UseMnemonic = false;
-            this.buttonLogo.UseVisualStyleBackColor = false;
-            this.buttonLogo.Click += new System.EventHandler(this.ButtonLogo_Click);
-            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
@@ -718,7 +723,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.linkLabelNewVersion);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.linkLabelChooseBTCWallet);
             this.Controls.Add(this.statusStrip1);
@@ -878,9 +882,9 @@
         private Forms.Components.DevicesListViewEnableControl devicesListViewEnableControl1;
 
         /// <summary>
-        /// Defines the linkLabelNewVersion
+        /// Defines the LinkLabelUpdate
         /// </summary>
-        private System.Windows.Forms.LinkLabel linkLabelNewVersion;
+        private System.Windows.Forms.LinkLabel LinkLabelUpdate;
 
         /// <summary>
         /// Defines the toolTip1

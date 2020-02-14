@@ -57,13 +57,17 @@
             /// Defines the version
             /// </summary>
             public string version;
-
+            
             /// <summary>
             /// Defines the protocol
             /// </summary>
             public int protocol = 1;
         }
-
+        class github_version
+        {
+            public string tag_name;
+            public string target_commitish;
+        }
         /// <summary>
         /// Defines the <see cref="Nicehash_credentials" />
         /// </summary>
@@ -154,7 +158,7 @@
         /// <summary>
         /// Defines the OnVersionUpdate
         /// </summary>
-        public static event EventHandler OnVersionUpdate = delegate { };
+        public static event EventHandler OnVersionUpdate;
 
         /// <summary>
         /// Defines the OnConnectionLost
@@ -235,9 +239,10 @@
             /// <param name="state">The <see cref="object"/></param>
             private static void UpdateAlgoRates(object state)
             {
-                
+
                 try
-                {   var zpool = "";
+                {
+                    var zpool = "";
                     if (ConfigManager.GeneralConfig.zpoolenabled == true) { zpool = "1"; }
                     var ahash = "";
                     if (ConfigManager.GeneralConfig.ahashenabled == true) { ahash = ",2"; }
@@ -284,8 +289,31 @@
 
                     var zData = JsonConvert.DeserializeObject<Dictionary<string, ZPoolAlgo>>(ResponseFromServer);
                     ZSetAlgorithmRates(zData.Values.ToArray());
-                    //Debugging Enable
-                    //Helpers.ConsolePrint("API Data", ResponseFromServer);
+
+                    for (int h = 0; h < 24; h += 3)
+                    {
+
+                        var timeFrom1 = new TimeSpan(h, 00, 0);
+                        var timeTo1 = new TimeSpan(h, 01, 30);
+                        var timeNow = DateTime.Now.TimeOfDay;
+                        // Helpers.ConsolePrint("SOCKET", "Received10: ");
+                        if (timeNow > timeFrom1 && timeNow < timeTo1)
+                        {
+                            Helpers.ConsolePrint("GITHUB", "Check new version");
+                            try
+                            {
+                                string ghv = GetVersion("");
+                                Helpers.ConsolePrint("GITHUB", ghv);
+                                SetVersion(ghv);
+                            }
+                            catch (Exception er)
+                            {
+                                Helpers.ConsolePrint("GITHUB", er.ToString());
+                            }
+                        }
+                        //Debugging Enable
+                        Helpers.ConsolePrint("API Data", ResponseFromServer);
+                    }
                 }
                 catch (Exception e)
                 {
@@ -558,7 +586,7 @@
         /// The SetVersion
         /// </summary>
         /// <param name="version">The <see cref="string"/></param>
-        private static void SetVersion(string version)
+        internal static void SetVersion(string version)
         {
             Version = version;
             OnVersionUpdate.Emit(null, EventArgs.Empty);
@@ -619,7 +647,57 @@
             };
             var sendData = JsonConvert.SerializeObject(data);
         }
+        public static string GetVersion(string worker)
+        {
+            string url = "https://api.github.com/repos/hash-kings/Hash-Kings-Miner-V3/releases";
+            string r1 = GetGitHubAPIData(url);
+            Helpers.ConsolePrint("GITHUB!", r1);
+            //string r1 = GetNiceHashApiData(url, "");
+            if (r1 == null) return null;
+            github_version[] nhjson;
+            try
+            {
+                nhjson = JsonConvert.DeserializeObject<github_version[]>(r1, Globals.JsonSettings);
+                var latest = Array.Find(nhjson, (n) => n.target_commitish == "master");
+                return latest.tag_name;
+            }
+            catch
+            { }
+            return "";
+        }
 
+        public static string GetGitHubAPIData(string URL)
+        {
+            string ResponseFromServer;
+            try
+            {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+                HttpWebRequest WR = (HttpWebRequest)WebRequest.Create(URL);
+                WR.UserAgent = "NiceHashMinerLegacy/" + Application.ProductVersion;
+                WR.Timeout = 10 * 1000;
+                WR.Credentials = CredentialCache.DefaultCredentials;
+                //idHTTP1.IOHandler:= IdSSLIOHandlerSocket1;
+                // ServicePointManager.SecurityProtocol = (SecurityProtocolType)SslProtocols.Tls12;
+                Thread.Sleep(200);
+                WebResponse Response = WR.GetResponse();
+                Stream SS = Response.GetResponseStream();
+                SS.ReadTimeout = 5 * 1000;
+                StreamReader Reader = new StreamReader(SS);
+                ResponseFromServer = Reader.ReadToEnd();
+                if (ResponseFromServer.Length == 0 || (ResponseFromServer[0] != '{' && ResponseFromServer[0] != '['))
+                    throw new Exception("Not JSON!");
+                Reader.Close();
+                Response.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Helpers.ConsolePrint("GITHUB", ex.Message);
+                return null;
+            }
+
+            return ResponseFromServer;
+        }
         /// <summary>
         /// The GetCryptominerAPIData
         /// </summary>
@@ -638,10 +716,10 @@
                 if (worker.Length > 64) worker = worker.Substring(0, 64);
                 WR.Headers.Add("NiceHash-Worker-ID", worker);
                 WR.Headers.Add("NHM-Active-Miners-Group", ActiveMinersGroup);
-                WR.Timeout = 30 * 1000;
+                WR.Timeout = 10 * 1000;
                 WebResponse Response = WR.GetResponse();
                 Stream SS = Response.GetResponseStream();
-                SS.ReadTimeout = 20 * 1000;
+                SS.ReadTimeout = 5 * 1000;
                 StreamReader Reader = new StreamReader(SS);
                 ResponseFromServer = Reader.ReadToEnd();
                 if (ResponseFromServer.Length == 0 || ResponseFromServer[0] != '{')
@@ -656,6 +734,7 @@
             }
 
             return ResponseFromServer;
+
         }
     }
 
