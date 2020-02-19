@@ -9,17 +9,17 @@
     /// <summary>
     /// Defines the <see cref="Cpuminer" />
     /// </summary>
-    public class CPU_nosuch : Miner
+    public class CPU_verium : Miner
     {
         protected int benchmarkTimeWait = 2 * 45;
         private string _username = "";
 
         private const double DevFee = 6.0;
         /// <summary>
-        /// Initializes a new instance of the <see cref="CPU_nosuch"/> class.
+        /// Initializes a new instance of the <see cref="CPU_verium"/> class.
         /// </summary>
-        public CPU_nosuch()
-            : base("CPU_nosuch")
+        public CPU_verium()
+            : base("CPU_verium")
         {
         }
 
@@ -152,9 +152,8 @@
             }
             string username = GetUsername(btcAddress, worker);
 
-            LastCommandLine = "--algo=" + MiningSetup.MinerName +
-                              " --url=" + url +
-                              " --userpass=" + username + ":" + worker + ",m=party.NPlusMiner" +
+            LastCommandLine = " -o " + url +
+                              " -u " + username + " -p " + worker + ",m=party.NPlusMiner" +
                               ExtraLaunchParametersParser.ParseForMiningSetup(
                                                                 MiningSetup,
                                                                 DeviceType.CPU) +
@@ -205,12 +204,12 @@
         /// <returns>The <see cref="string"/></returns>
         protected override string BenchmarkCreateCommandLine(Algorithm algorithm, int time)
         {
-            return "--algo=" + algorithm.MinerName +
-                         " --benchmark" +
+            time = time * 2;
+            return " --benchmark" +
                          ExtraLaunchParametersParser.ParseForMiningSetup(
                                                                 MiningSetup,
                                                                 DeviceType.CPU) +
-                         " --time-limit " + time.ToString();
+                         " --time-limit=" + time.ToString();
         }
 
         /// <summary>

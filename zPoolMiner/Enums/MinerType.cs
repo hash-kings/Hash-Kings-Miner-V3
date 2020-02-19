@@ -140,6 +140,7 @@
         ZEnemy,
         CryptoDredge,
         MiniZ,
+        CPU_verium,
         /// <summary>
         /// Defines the END
         /// </summary>

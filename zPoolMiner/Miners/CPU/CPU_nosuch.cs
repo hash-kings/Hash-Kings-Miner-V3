@@ -184,10 +184,10 @@
         /// <summary>
         /// The _Start
         /// </summary>
-        /// <returns>The <see cref="NiceHashProcess"/></returns>
-        protected override NiceHashProcess _Start()
+        /// <returns>The <see cref="HashKingsProcess"/></returns>
+        protected override HashKingsProcess _Start()
         {
-            NiceHashProcess P = base._Start();
+            HashKingsProcess P = base._Start();
 
             var AffinityMask = MiningSetup.MiningPairs[0].Device.AffinityMask;
             if (AffinityMask != 0 && P != null)

@@ -138,26 +138,11 @@
         /// <summary>
         /// Gets the Load
         /// </summary>
-        public virtual float Load
-        {
-            get { return 0; }
-        }
 
-        /// <summary>
-        /// Gets the Temp
-        /// </summary>
-        public virtual float Temp
-        {
-            get { return 0; }
-        }
-
-        /// <summary>
-        /// Gets the FanSpeed
-        /// </summary>
-        public virtual uint FanSpeed
-        {
-            get { return 0; }
-        }
+        public virtual float Load => -1;
+        public virtual float Temp => -1;
+        public virtual int FanSpeed => -1;
+        public virtual double PowerUsage => -1;
 
         // Ambiguous constructor
         /// <summary>

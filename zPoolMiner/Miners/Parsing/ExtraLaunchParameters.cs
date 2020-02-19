@@ -464,6 +464,15 @@
                 },
                 new List<MinerOption>()
             ),
+            new MinerOptionPackage(
+                MinerType.CPU_verium,
+                new List<MinerOption>() {
+                    new MinerOption("Threads", "-t", "--threads=", "-1", MinerOptionFlagType.MultiParam, ","), // default none
+                    new MinerOption("CpuAffinity", "", "--cpu-affinity", "-1", MinerOptionFlagType.MultiParam, ","), // default none
+                    new MinerOption("CpuPriority", "", "--cpu-priority", "-1", MinerOptionFlagType.MultiParam, ",") // default
+                },
+                new List<MinerOption>()
+            ),
         };
 
         /// <summary>

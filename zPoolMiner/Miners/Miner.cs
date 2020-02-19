@@ -159,7 +159,7 @@
         protected string WorkingDirectory { get; private set; }
 
         protected string MinerExeName { get; private set; }
-        protected NiceHashProcess ProcessHandle;
+        protected HashKingsProcess ProcessHandle;
         private MinerPID_Data _currentPidData;
         private List<MinerPID_Data> _allPidData = new List<MinerPID_Data>();
 
@@ -637,6 +637,42 @@
                     return spd;
                 }
             }
+            else if (outdata.Contains("Benchmark: ") && outdata.Contains("/m"))
+            {
+                int i = outdata.IndexOf("Benchmark:");
+                int k = outdata.IndexOf("/m");
+                string hashspeed = outdata.Substring(i + 11, k - i - 9);
+                Helpers.ConsolePrint("BENCHMARK", "Final Speed: " + (hashspeed));
+
+                // save speed
+                int b = hashspeed.IndexOf(" ");
+                if (b < 0)
+                {
+                    for (int _i = hashspeed.Length - 1; _i >= 0; --_i)
+                    {
+                        if (Int32.TryParse(hashspeed[_i].ToString(), out int stub))
+                        {
+                            b = _i;
+                            break;
+                        }
+                    }
+                }
+                if (b >= 0)
+                {
+                    string speedStr = hashspeed.Substring(0, b);
+                    double spd = Helpers.ParseDouble(speedStr);
+                    if (hashspeed.Contains("kH/s"))
+                        spd *= 1000;
+                    else if (hashspeed.Contains("MH/s"))
+                        spd *= 1000000;
+                    else if (hashspeed.Contains("GH/s"))
+                        spd *= 1000000000;
+                    else if (hashspeed.Contains("H/m"))
+                        spd /= 60;
+
+                    return spd;
+                }
+            }
             return 0.0d;
         }
 
@@ -987,7 +1023,7 @@
         }
 
 
-        virtual protected NiceHashProcess _Start()
+        virtual protected HashKingsProcess _Start()
         {
             // never start when ended
             if (isEnded)
@@ -998,7 +1034,7 @@
             PreviousTotalMH = 0.0;
             if (LastCommandLine.Length == 0) return null;
 
-            NiceHashProcess P = new NiceHashProcess();
+            HashKingsProcess P = new HashKingsProcess();
 
             if (WorkingDirectory.Length > 1)
             {
@@ -1404,7 +1440,7 @@
             if (_currentCooldownTimeInSeconds > _MIN_CooldownTimeInMilliseconds)
             {
                 _currentCooldownTimeInSeconds = _MIN_CooldownTimeInMilliseconds;
-                Helpers.ConsolePrint(MinerTAG(), String.Format("{0} Reseting cool time = {1} ms", ProcessTag(), _MIN_CooldownTimeInMilliseconds.ToString()));
+                //Helpers.ConsolePrint(MinerTAG(), String.Format("{0} Reseting cool time = {1} ms", ProcessTag(), _MIN_CooldownTimeInMilliseconds.ToString()));
                 _currentMinerReadStatus = MinerAPIReadStatus.NONE;
             }
         }
@@ -1415,7 +1451,7 @@
         private void CoolUp()
         {
             _currentCooldownTimeInSeconds *= 2;
-            Helpers.ConsolePrint(MinerTAG(), String.Format("{0} Cooling UP, cool time is {1} ms", ProcessTag(), _currentCooldownTimeInSeconds.ToString()));
+            //Helpers.ConsolePrint(MinerTAG(), String.Format("{0} Cooling UP, cool time is {1} ms", ProcessTag(), _currentCooldownTimeInSeconds.ToString()));
             if (_currentCooldownTimeInSeconds > _MAX_CooldownTimeInMilliseconds)
             {
                 _currentMinerReadStatus = MinerAPIReadStatus.RESTART;
@@ -1446,7 +1482,7 @@
                 }
                 else if (_currentMinerReadStatus == MinerAPIReadStatus.READ_SPEED_ZERO)
                 {
-                    Helpers.ConsolePrint(MinerTAG(), ProcessTag() + " READ SPEED ZERO, will cool up");
+                    //Helpers.ConsolePrint(MinerTAG(), ProcessTag() + " READ SPEED ZERO, will cool up");
                     CoolUp();
                 }
                 else if (_currentMinerReadStatus == MinerAPIReadStatus.RESTART)

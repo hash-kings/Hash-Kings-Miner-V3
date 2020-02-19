@@ -378,6 +378,13 @@
 
                         }
                     },
+                { MinerBaseType.CPU_verium,
+                        new List<Algorithm>()
+                        {
+                            new Algorithm(MinerBaseType.CPU_verium, AlgorithmType.scryptn2, "scryptn2")
+
+                        }
+                    },
             };
             }
             if (DeviceGroupType.AMD_OpenCL == deviceGroupType)
@@ -554,6 +561,7 @@
                             new Algorithm(MinerBaseType.CryptoDredge, AlgorithmType.cryptonight_xeq, "cngpu"),
                             new Algorithm(MinerBaseType.CryptoDredge, AlgorithmType.cryptonight_saber, "cnsaber"),
                             new Algorithm(MinerBaseType.CryptoDredge, AlgorithmType.cryptonight_conceal, "cnconceal"),
+                        new Algorithm(MinerBaseType.CryptoDredge, AlgorithmType.cryptonight_upx, "cnupx2"),
                             new Algorithm(MinerBaseType.CryptoDredge, AlgorithmType.chukwa, "chukwa"),
                         }
                     },

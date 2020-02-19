@@ -137,35 +137,52 @@
         /// <param name="worker">The <see cref="string"/></param>
         public static void UpdateAPI(string worker)
         {
-            ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
-                   | SecurityProtocolType.Tls11
-                   | SecurityProtocolType.Tls12
-                   | SecurityProtocolType.Ssl3;
-            var WR = (HttpWebRequest)WebRequest.Create("https://blockchain.info/ticker");
-            var Response = WR.GetResponse();
-            var SS = Response.GetResponseStream();
-            SS.ReadTimeout = 20 * 1000;
-            var Reader = new StreamReader(SS);
-            var ResponseFromServer = Reader.ReadToEnd();
-            if (ResponseFromServer.Length == 0 || ResponseFromServer[0] != '{')
-                throw new Exception("Not JSON!");
-            Reader.Close();
-            Response.Close();
-
-            dynamic fiat_rates = JObject.Parse(ResponseFromServer);
             try
             {
-                //USD_BTC_rate = Helpers.ParseDouble((string)fiat_rates[ConfigManager.GeneralConfig.DisplayCurrency]["last"]);
-                USD_BTC_rate = Helpers.ParseDouble((string)fiat_rates["USD"]["last"]);
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+                       | SecurityProtocolType.Tls11
+                       | SecurityProtocolType.Tls12
+                       | SecurityProtocolType.Ssl3;
+                var WR = (HttpWebRequest)WebRequest.Create("https://blockchain.info/ticker");
+                var Response = WR.GetResponse();
+                var SS = Response.GetResponseStream();
+                SS.ReadTimeout = 20 * 1000;
+                var Reader = new StreamReader(SS);
+                var ResponseFromServer = Reader.ReadToEnd();
+                if (ResponseFromServer.Length == 0 || ResponseFromServer[0] != '{')
+                    throw new Exception("Not JSON!");
+                Reader.Close();
+                Response.Close();
 
-                exchanges_fiat = new Dictionary<string, double>();
-                foreach (var c in _supportedCurrencies)
-                    exchanges_fiat.Add(c, Helpers.ParseDouble((string)fiat_rates[c]["last"]) / USD_BTC_rate);
+                dynamic fiat_rates = JObject.Parse(ResponseFromServer);
+                try
+                {
+                    //USD_BTC_rate = Helpers.ParseDouble((string)fiat_rates[ConfigManager.GeneralConfig.DisplayCurrency]["last"]);
+                    USD_BTC_rate = Helpers.ParseDouble((string)fiat_rates["USD"]["last"]);
+
+                    exchanges_fiat = new Dictionary<string, double>();
+                    foreach (var c in _supportedCurrencies)
+                        exchanges_fiat.Add(c, Helpers.ParseDouble((string)fiat_rates[c]["last"]) / USD_BTC_rate);
+                }
+                catch (Exception)
+                {
+                    Helpers.ConsolePrint("CurrencyAPI", "Currency update failed will retry on next cycle");
+                }
             }
-            catch (Exception)
+            catch (WebException wex)
             {
-                Helpers.ConsolePrint("CurrencyAPI", "Currency update failed will retry on next cycle");
+                if (wex.Response != null)
+                {
+                    using (var errorResponse = (HttpWebResponse)wex.Response)
+                    {
+                        using (var reader = new StreamReader(errorResponse.GetResponseStream()))
+                        {
+                            string error = reader.ReadToEnd();
+                            //TODO: use JSON.net to parse this string and look at the error message
+                        }
+                    }
+                }
             }
         }
 

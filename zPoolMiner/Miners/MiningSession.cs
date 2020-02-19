@@ -381,7 +381,7 @@ namespace zPoolMiner.Miners
                 if (percDiff < ConfigManager.GeneralConfig.SwitchProfitabilityThreshold)
                 {
                     // don't switch
-                    Helpers.ConsolePrint(TAG, String.Format("Will NOT switch profit diff is {0}, current threshold {1}", percDiff, ConfigManager.GeneralConfig.SwitchProfitabilityThreshold));
+                    //Helpers.ConsolePrint(TAG, String.Format("Will NOT switch profit diff is {0}, current threshold {1}", percDiff, ConfigManager.GeneralConfig.SwitchProfitabilityThreshold));
                     // RESTORE OLD PROFITS STATE
                     foreach (var device in _miningDevices)
                     {

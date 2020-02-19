@@ -6,9 +6,9 @@
     using System.Threading;
 
     /// <summary>
-    /// Defines the <see cref="NiceHashProcess" />
+    /// Defines the <see cref="HashKingsProcess" />
     /// </summary>
-    public class NiceHashProcess
+    public class HashKingsProcess
     {
         /// <summary>
         /// Defines the CREATE_NEW_CONSOLE
@@ -407,9 +407,9 @@
         private IntPtr pHandle;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NiceHashProcess"/> class.
+        /// Initializes a new instance of the <see cref="HashKingsProcess"/> class.
         /// </summary>
-        public NiceHashProcess()
+        public HashKingsProcess()
         {
             StartInfo = new ProcessStartInfo();
         }

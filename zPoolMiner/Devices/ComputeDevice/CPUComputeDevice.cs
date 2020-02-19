@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using zPoolMiner.Enums;
-using OpenHardwareMonitor.Collections;
-using OpenHardwareMonitor.Hardware;
+//using LibreHardwareMonitor.Collections;
+using LibreHardwareMonitor.Hardware;
 
 namespace zPoolMiner.Devices
 {
@@ -32,7 +32,7 @@ namespace zPoolMiner.Devices
                     float highest = 0;
                     foreach(ISensor s in h.Sensors)
                     {
-                        if(s.SensorType == SensorType.Temperature && s.Name == "CPU Package")
+                        if(s.SensorType == SensorType.Temperature && s.Name == "Package")
                         {
                             return s.Value??-1;
                         }else if(s.SensorType == SensorType.Temperature)
@@ -64,7 +64,7 @@ namespace zPoolMiner.Devices
             UUID = GetUUID(ID, GroupNames.GetGroupName(DeviceGroupType, ID), Name, DeviceGroupType);
             AlgorithmSettings = GroupAlgorithms.CreateForDeviceList(this);
             Index = ID;  // Don't increment for CPU
-            c.CPUEnabled = true;
+            c.IsCpuEnabled = true;
             c.Open();
             cpuCounter = new PerformanceCounter
             {

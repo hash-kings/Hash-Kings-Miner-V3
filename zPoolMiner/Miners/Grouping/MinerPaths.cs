@@ -317,6 +317,7 @@
             public const string CPU_nosuch = _bin + @"\CPU\CPU-nosuch\cpuminer-aes-sse2.exe";
             public const string CPU_RKZ = _bin + @"\CPU\CPU-RKZ\cpuminer.exe";
             public const string CPU_rplant = _bin + @"\CPU\CPU-rplant\cpuminer-aes.exe";
+            public const string CPU_verium = _bin + @"\CPU\CPU-Verium\cpuminer.exe";
             public const string CPU_SRBMiner = _bin + @"\CPU\CPU-SRBMiner\SRBMiner-MULTI.exe";
             public const string CPU_XMRig = _bin + @"\CPU\CPU-XMRig\xmrig.exe";
             public const string CPU_XMRigUPX = _bin + @"\CPU\CPU-XMRigUPX\xmrig.exe";
@@ -450,6 +451,8 @@
 
                 case MinerBaseType.CryptoDredge:
                     return NVIDIA_GROUPS.CryptoDredge(algoType, devGroupType);
+                case MinerBaseType.CPU_verium:
+                    return Data.CPU_verium;
             }
             return Data.NONE;
         }

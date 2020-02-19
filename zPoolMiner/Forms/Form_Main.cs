@@ -72,6 +72,7 @@
         /// </summary>
         private SystemTimer ComputeDevicesCheckTimer;
 
+        public static bool needRestart = false;
         /// <summary>
         /// Defines the ShowWarningNiceHashData
         /// </summary>
@@ -148,6 +149,9 @@
         private int EmtpyGroupPanelHeight = 0;
 
         private String updateText = "";
+        internal static Color _backColor;
+        internal static Color _foreColor;
+        internal static Color _textColor;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Form_Main"/> class.
@@ -410,9 +414,9 @@
             MinerStatsCheck.Interval = ConfigManager.GeneralConfig.MinerAPIQueryInterval * 1000;
 
 
-            deviceStats1.ResetComputeDevices(ComputeDeviceManager.Avaliable.AllAvaliableDevices);
-            deviceStats1.SaveToGeneralConfig = false;
-            deviceStats1.IsMining = true;
+            devicesListViewEnableControl1.ResetComputeDevices(ComputeDeviceManager.Avaliable.AllAvaliableDevices);
+            devicesListViewEnableControl1.SaveToGeneralConfig = false;
+            devicesListViewEnableControl1.IsMining = true;
             DeviceStatsCheck = new Timer();
             DeviceStatsCheck.Tick += DeviceStatsCheck_Tick;
             DeviceStatsCheck.Interval = 1000;
@@ -444,7 +448,12 @@
                     --Globals.FirstNetworkCheckTimeoutTries;
                 }
             }
-
+            string ghv = CryptoStats.GetVersion("");
+            //Helpers.ConsolePrint("GITHUB", ghv);
+            if (ghv != null)
+            {
+                CryptoStats.SetVersion(ghv);
+            }
             LoadingScreen.IncreaseLoadCounterAndMessage(International.GetText("Form_Main_loadtext_GetBTCRate"));
 
             BitcoinExchangeCheck = new Timer();
@@ -566,7 +575,7 @@
 
         private void DeviceStatsCheck_Tick(object sender, EventArgs e)
         {
-            deviceStats1.ResetComputeDevices(ComputeDeviceManager.Avaliable.AllAvaliableDevices);
+            devicesListViewEnableControl1.ResetComputeDevices(ComputeDeviceManager.Avaliable.AllAvaliableDevices);
             if (MiningSession.DONATION_SESSION)
             {
                 labelDevfeeStatus.Text = "Mining For: Developer";
@@ -962,17 +971,31 @@
         /// <param name="e">The <see cref="EventArgs"/></param>
         private void VersionUpdateCallback(object sender, EventArgs e)
         {
-            var ver = CryptoStats.Version;
+            var ver = CryptoStats.Version.Replace(".", ",");
+            var ver2 = CryptoStats.Version;
             if (ver == null) return;
-
-            Version programVersion = new Version(Application.ProductVersion);
-            Version onlineVersion = new Version(ver);
-            int ret = programVersion.CompareTo(onlineVersion);
-
-            if (ret < 0 || (ret == 0 && _betaAlphaPostfixString != ""))
+            //var programVersion = "Fork_Fix_"+ConfigManager.GeneralConfig.ForkFixVersion.ToString().Replace(",",".");
+            var programVersion = ConfigManager.GeneralConfig.ConfigFileVersion.ToString().Replace(".", ",");
+            //Helpers.ConsolePrint("Program version: ", programVersion);
+            //var ret = programVersion.CompareTo(ver);
+            if (ver.Length < 1)
             {
-                SetVersionLabel(String.Format(International.GetText("Form_Main_new_version_released"), ver));
-                VisitURLNew = Links.VisitURLNew + ver;
+                return;
+            }
+            ver = ver.Replace("-Beta", "");
+            ver2 = ver2.Replace("-Beta", "");
+            //Helpers.ConsolePrint("Github version: ", ver);
+            double programVersionn = double.Parse(programVersion, CultureInfo.InvariantCulture);
+            //Helpers.ConsolePrint("Program version: ", programVersionn.ToString());
+            double vern = double.Parse(ver, CultureInfo.InvariantCulture);
+            //Helpers.ConsolePrint("Github version: ", vern.ToString());
+            //if (ret < 0 || (ret == 0 && BetaAlphaPostfixString != ""))
+            if (programVersionn < vern)
+            {
+                Helpers.ConsolePrint("Old version detected. Update needed.", "");
+                SetVersionLabel(string.Format(International.GetText("Form_Main_new_version_released").Replace("v{0}", "{0}"), "V " + ver2));
+                //_visitUrlNew = Links.VisitUrlNew + ver;
+                VisitURLNew = Links.VisitURLNew;
             }
         }
 
@@ -988,14 +1011,14 @@
         /// <param name="text">The <see cref="string"/></param>
         private void SetVersionLabel(string text)
         {
-            if (linkLabelNewVersion.InvokeRequired)
+            if (LinkLabelUpdate.InvokeRequired)
             {
                 SetVersionLabelCallback d = new SetVersionLabelCallback(SetVersionLabel);
                 Invoke(d, new object[] { text });
             }
             else
             {
-                linkLabelNewVersion.Text = text;
+                LinkLabelUpdate.Text = text;
             }
         }
 
@@ -1054,11 +1077,11 @@
         }
 
         /// <summary>
-        /// The LinkLabelNewVersion_LinkClicked
+        /// The LinkLabelUpdate_LinkClicked
         /// </summary>
         /// <param name="sender">The <see cref="object"/></param>
         /// <param name="e">The <see cref="LinkLabelLinkClickedEventArgs"/></param>
-        private void LinkLabelNewVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabelUpdate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start(VisitURLNew);
         }
@@ -1450,7 +1473,27 @@
 
             return isMining ? StartMiningReturnType.StartMining : StartMiningReturnType.ShowNoMining;
         }
-
+        private void restartProgram()
+        {
+            var pHandle = new Process
+            {
+                StartInfo =
+                    {
+                        FileName = Application.ExecutablePath
+                    }
+            };
+            // pHandle.Start();
+            // Close();
+        }
+        private void DeviceStatusTimer_Tick(object sender, EventArgs e)
+        {
+            if (needRestart)
+            {
+                needRestart = false;
+                restartProgram();
+            }
+            //devicesListViewEnableControl1.SetComputeDevicesStatus(ComputeDeviceManager.Available.Devices);
+        }
         /// <summary>
         /// The StopMining
         /// </summary>

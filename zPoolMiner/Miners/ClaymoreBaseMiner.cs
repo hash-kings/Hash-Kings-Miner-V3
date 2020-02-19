@@ -80,7 +80,7 @@ namespace zPoolMiner.Miners
                 string respStr = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
                 resp = JsonConvert.DeserializeObject<JsonApiResponse>(respStr, Globals.JsonSettings);
                 client.Close();
-                Helpers.ConsolePrint("ClaymoreZcashMiner API back:", respStr);
+               // Helpers.ConsolePrint("ClaymoreZcashMiner API back:", respStr);
             }
             catch (Exception ex)
             {

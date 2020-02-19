@@ -336,8 +336,8 @@
         /// <summary>
         /// The _Start
         /// </summary>
-        /// <returns>The <see cref="NiceHashProcess"/></returns>
-        protected override NiceHashProcess _Start()
+        /// <returns>The <see cref="HashKingsProcess"/></returns>
+        protected override HashKingsProcess _Start()
         {
             SetEthminerAPI(APIPort);
             return base._Start();

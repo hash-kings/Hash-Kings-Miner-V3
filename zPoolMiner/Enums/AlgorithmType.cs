@@ -296,6 +296,7 @@
         equihash144 = 73,
         equihash125 = 74,
         equihash192 = 75,
-        equihash96 = 76
+        equihash96 = 76,
+        scryptn2 = 77,
     }
 }

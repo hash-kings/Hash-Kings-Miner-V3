@@ -54,6 +54,7 @@ namespace zPoolMiner.Utils
 @"\CPU\CPU-JayDDee\cpuminer-aes-sse42.exe",
 @"\CPU\CPU-JayDDeeYespower\cpuminer-sse42.exe",
 @"\CPU\CPU-nosuch\cpuminer-aes-sse2.exe",
+@"\CPU\CPU-Verium\cpuminer.exe",
 @"\CPU\CPU-RKZ\cpuminer.exe",
 @"\CPU\CPU-rplant\cpuminer-aes.exe",
 @"\CPU\CPU-SRBMiner\SRBMiner-MULTI.exe",

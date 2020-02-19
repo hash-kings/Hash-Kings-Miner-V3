@@ -141,7 +141,7 @@ namespace zPoolMiner.Forms.Components
                 Color c = Color.White;
                 if (computeDevice.DeviceType.Equals(Enums.DeviceType.CPU))
                 {
-                    if (computeDevice.Temp == -1)
+                    if (computeDevice.Temp == 0)
                     {
                         txt = "Temperature: N/A Run as Adminstrator Required  /  Load: " + computeDevice.Load.ToString("0.00") + " % ";
                     }
@@ -152,7 +152,7 @@ namespace zPoolMiner.Forms.Components
                 }
                 else
                 {
-                    txt = "Temperature: " + computeDevice.Temp.ToString("0.00") + "°C" + "  /  Fan Speed: " + computeDevice.FanSpeed + "  rpm  /  Load: " + computeDevice.Load + "%";
+                    txt = "Temperature: " + Math.Truncate(computeDevice.Temp).ToString() + "°C" + "  /  Fan Speed: " + computeDevice.FanSpeed.ToString() + "%" + "  /  Load: " + Math.Truncate(computeDevice.Load).ToString() + "%";
                     Form_Main form = (Form_Main)ParentForm;
                     
                     if (computeDevice.Temp < ConfigManager.GeneralConfig.tempLowThreshold && computeDevice.Enabled && form.getDevicesListControl().IsMining && ConfigManager.GeneralConfig.beep)

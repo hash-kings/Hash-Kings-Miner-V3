@@ -260,6 +260,8 @@
         /// </summary>
         public bool RunScriptOnCUDA_GPU_Lost = false;
 
+
+        public bool Group_same_devices = false;
         // 3rd party miners
         // 3rd party miners        /// <summary>
         /// Defines the Use3rdPartyMiners
@@ -325,6 +327,14 @@
         public int tempLowThreshold = 50;
         public int tempHighThreshold = 82;
         public bool beep = true;
+
+        public object OverrideAMDBusIds { get; internal set; }
+        public bool ShowFanAsPercent { get; set; } = true;
+        public int ColumnENABLED { get; internal set; }
+        public int ColumnTEMP { get; internal set; }
+        public int ColumnLOAD { get; internal set; }
+        public int ColumnFAN { get; internal set; }
+        public int ColumnPOWER { get; internal set; }
 
         // methods
         /// <summary>
@@ -413,6 +423,7 @@
             tempLowThreshold = 35;
             tempHighThreshold = 90;
             beep = true;
+            Group_same_devices = false;
     }
 
         /// <summary>

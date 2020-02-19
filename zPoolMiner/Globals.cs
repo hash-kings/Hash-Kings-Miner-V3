@@ -113,7 +113,7 @@ namespace zPoolMiner
         {
             if (BitcoinAddress.ValidateBitcoinAddress((Configs.ConfigManager.GeneralConfig.BitcoinAddress.Trim())))
             {
-                Helpers.ConsolePrint("Address Get", "Main Address");
+                //Helpers.ConsolePrint("Address Get", "Main Address");
                 return Configs.ConfigManager.GeneralConfig.BitcoinAddress.Trim();
             }
             else
@@ -125,7 +125,7 @@ namespace zPoolMiner
         {
             if (BitcoinAddress.ValidateBitcoinAddress((Configs.ConfigManager.GeneralConfig.zpoolAddress.Trim())))
             {
-                Helpers.ConsolePrint("Address Get", "zpool Address");
+                //Helpers.ConsolePrint("Address Get", "zpool Address");
                 return Configs.ConfigManager.GeneralConfig.zpoolAddress.Trim();
             }
             else
@@ -137,7 +137,7 @@ namespace zPoolMiner
         {
             if (BitcoinAddress.ValidateBitcoinAddress((Configs.ConfigManager.GeneralConfig.ahashAddress.Trim())))
             {
-                Helpers.ConsolePrint("Address Get", "ahash Address");
+                //Helpers.ConsolePrint("Address Get", "ahash Address");
                 return Configs.ConfigManager.GeneralConfig.ahashAddress.Trim();
             }
             else
@@ -149,7 +149,7 @@ namespace zPoolMiner
         {
             if (BitcoinAddress.ValidateBitcoinAddress((Configs.ConfigManager.GeneralConfig.hashrefineryAddress.Trim())))
             {
-                Helpers.ConsolePrint("Address Get", "hashrefinery Address");
+                //Helpers.ConsolePrint("Address Get", "hashrefinery Address");
                 return Configs.ConfigManager.GeneralConfig.hashrefineryAddress.Trim();
             }
             else
@@ -161,7 +161,7 @@ namespace zPoolMiner
         {
             if (BitcoinAddress.ValidateBitcoinAddress((Configs.ConfigManager.GeneralConfig.nicehashAddress.Trim())))
             {
-                Helpers.ConsolePrint("Address Get", "nicehash");
+               // Helpers.ConsolePrint("Address Get", "nicehash");
                 return Configs.ConfigManager.GeneralConfig.nicehashAddress.Trim();
             }
             else
@@ -173,7 +173,7 @@ namespace zPoolMiner
         {
             if (BitcoinAddress.ValidateBitcoinAddress((Configs.ConfigManager.GeneralConfig.zergAddress.Trim())))
             {
-                Helpers.ConsolePrint("Address Get", "zergpool Address");
+                //Helpers.ConsolePrint("Address Get", "zergpool Address");
                 return Configs.ConfigManager.GeneralConfig.zergAddress.Trim();
             }
             else
@@ -185,7 +185,7 @@ namespace zPoolMiner
         {
             if (BitcoinAddress.ValidateBitcoinAddress((Configs.ConfigManager.GeneralConfig.MPHAddress.Trim())))
             {
-                Helpers.ConsolePrint("Address Get", "MPH Address");
+                //Helpers.ConsolePrint("Address Get", "MPH Address");
                 return Configs.ConfigManager.GeneralConfig.MPHAddress.Trim();
             }
             else
@@ -197,7 +197,7 @@ namespace zPoolMiner
         {
             if (BitcoinAddress.ValidateBitcoinAddress((Configs.ConfigManager.GeneralConfig.minemoneyAddress.Trim())))
             {
-                Helpers.ConsolePrint("Address Get", "MineMoney Address");
+                //Helpers.ConsolePrint("Address Get", "MineMoney Address");
                 return Configs.ConfigManager.GeneralConfig.minemoneyAddress.Trim();
             }
             else
@@ -209,7 +209,7 @@ namespace zPoolMiner
         {
             if (BitcoinAddress.ValidateBitcoinAddress((Configs.ConfigManager.GeneralConfig.starpoolAddress.Trim())))
             {
-                Helpers.ConsolePrint("Address Get", "starpool Address");
+                //Helpers.ConsolePrint("Address Get", "starpool Address");
                 return Configs.ConfigManager.GeneralConfig.starpoolAddress.Trim();
             }
             else
@@ -221,7 +221,7 @@ namespace zPoolMiner
         {
             if (BitcoinAddress.ValidateBitcoinAddress((Configs.ConfigManager.GeneralConfig.blockmunchAddress.Trim())))
             {
-                Helpers.ConsolePrint("Address Get", "blockmunch Address");
+                //Helpers.ConsolePrint("Address Get", "blockmunch Address");
                 return Configs.ConfigManager.GeneralConfig.blockmunchAddress.Trim();
             }
             else
@@ -233,7 +233,7 @@ namespace zPoolMiner
         {
             if (BitcoinAddress.ValidateBitcoinAddress((Configs.ConfigManager.GeneralConfig.blazepoolAddress.Trim())))
             {
-                Helpers.ConsolePrint("Address Get", "blazepool Address");
+                //Helpers.ConsolePrint("Address Get", "blazepool Address");
                 return Configs.ConfigManager.GeneralConfig.blazepoolAddress.Trim();
             }
             else

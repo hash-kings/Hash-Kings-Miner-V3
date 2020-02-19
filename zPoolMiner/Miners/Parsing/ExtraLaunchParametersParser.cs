@@ -351,6 +351,10 @@ namespace zPoolMiner.Miners.Parsing
             {
                 return MinerType.CryptoDredge;
             }
+            if (MinerBaseType.CPU_verium == minerBaseType)
+            {
+                return MinerType.CPU_verium;
+            }
 
             return MinerType.NONE;
         }

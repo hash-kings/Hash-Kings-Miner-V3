@@ -128,6 +128,8 @@
                     return new ZEnemy();
                 case MinerBaseType.MiniZ:
                     return new MiniZ();
+                case MinerBaseType.CPU_verium:
+                    return new CPU_verium();
 
 
 
