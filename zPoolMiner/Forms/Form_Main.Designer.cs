@@ -910,7 +910,9 @@
         /// Defines the panel6
         /// </summary>
         private System.Windows.Forms.Panel panel6;
+#pragma warning disable CS0169 // The field 'Form_Main.deviceStats' is never used
         private Forms.Components.DeviceStats deviceStats;
+#pragma warning restore CS0169 // The field 'Form_Main.deviceStats' is never used
         private System.Windows.Forms.Panel panel5;
         private Forms.Components.DeviceStats deviceStats1;
         private System.Windows.Forms.NumericUpDown tempLower;

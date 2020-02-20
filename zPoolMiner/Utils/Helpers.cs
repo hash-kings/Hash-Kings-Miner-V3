@@ -319,7 +319,7 @@ namespace zPoolMiner
         public static void InstallVcRedist()
         {
             Process CudaDevicesDetection = new Process();
-            CudaDevicesDetection.StartInfo.FileName = @"bin\vc_redist.x64.exe";
+            CudaDevicesDetection.StartInfo.FileName = @"Common\vc_redist.x64.exe";
             CudaDevicesDetection.StartInfo.Arguments = "/q /norestart";
             CudaDevicesDetection.StartInfo.UseShellExecute = false;
             CudaDevicesDetection.StartInfo.RedirectStandardError = false;

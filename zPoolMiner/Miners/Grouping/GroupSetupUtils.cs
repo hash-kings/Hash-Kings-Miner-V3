@@ -220,7 +220,9 @@ namespace zPoolMiner.Miners.Grouping
 
     internal class AvaragerGroup
     {
+#pragma warning disable CS0649 // Field 'AvaragerGroup.DeviceName' is never assigned to, and will always have its default value null
         public string DeviceName;
+#pragma warning restore CS0649 // Field 'AvaragerGroup.DeviceName' is never assigned to, and will always have its default value null
         public List<string> UUIDsList = new List<string>();
 
         // algo_id, speed_sum, speed_count

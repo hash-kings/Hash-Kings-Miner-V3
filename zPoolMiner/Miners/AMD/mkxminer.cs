@@ -12,7 +12,9 @@ namespace zPoolMiner.Miners
 {
     internal class Mkxminer : Miner
     {
+#pragma warning disable CS0414 // The field 'Mkxminer.benchmarkTimeWait' is assigned but its value is never used
         private int benchmarkTimeWait = 11 * 60;
+#pragma warning restore CS0414 // The field 'Mkxminer.benchmarkTimeWait' is assigned but its value is never used
 
         private readonly int GPUPlatformNumber;
 
@@ -24,7 +26,9 @@ namespace zPoolMiner.Miners
             IsNeverHideMiningWindow = true;
         }
 
+#pragma warning disable CS0108 // 'Mkxminer.BenchmarkException' hides inherited member 'Miner.BenchmarkException'. Use the new keyword if hiding was intended.
         private bool BenchmarkException
+#pragma warning restore CS0108 // 'Mkxminer.BenchmarkException' hides inherited member 'Miner.BenchmarkException'. Use the new keyword if hiding was intended.
         {
             get
             {
@@ -245,7 +249,9 @@ namespace zPoolMiner.Miners
         #endregion Decoupled benchmarking routines
 
         // TODO _currentMinerReadStatus
+#pragma warning disable CS1998 // This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.
         public override async Task<APIData> GetSummaryAsync()
+#pragma warning restore CS1998 // This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.
         {
             // cryptonight does not have api bind port
             APIData mkxminerData = new APIData(MiningSetup.CurrentAlgorithmType)

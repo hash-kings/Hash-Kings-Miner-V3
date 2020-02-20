@@ -136,7 +136,10 @@
             // root binary folder            /// <summary>
             /// Defines the _bin
             /// </summary>
-            private const string _bin = @"bin";
+            private const string AMD_Miners = @"AMD_Miners";
+            private const string NVIDIA_Miners = @"NVIDIA_Miners";
+            private const string AMD_NVIDIA_Miners = @"AMD_NVIDIA_Miners";
+            private const string CPU_Miners = @"CPU_Miners";
 
             /// <summary>
             /// ccminers
@@ -212,7 +215,7 @@
             /// <summary>
             /// Defines the ccminer_tpruvot2
             /// </summary>
-            public const string ccminer_tpruvot2 = _bin + @"\ccminer_tpruvot2\ccminer.exe";
+            public const string ccminer_tpruvot2 = NVIDIA_Miners + @"\ccminer_tpruvot2\ccminer.exe";
 
             /// <summary>
             /// Defines the ccminer_x11gost
@@ -227,12 +230,12 @@
             /// <summary>
             /// CPUminers
             /// </summary>
-            public const string cpuminer_opt_AES = _bin + @"\CPU\CPU-JayDDee\cpuminer-aes-sse42.exe";
+            public const string cpuminer_opt_AES = CPU_Miners + @"\CPU-JayDDee\cpuminer-aes-sse42.exe";
 
             /// <summary>
             /// Defines the cpuminer_opt_AVX2
             /// </summary>
-            public const string cpuminer_opt_AVX2 = _bin + @"\CPU\CPU-JayDDee\cpuminer-avx2.exe";
+            public const string cpuminer_opt_AVX2 = CPU_Miners + @"\CPU-JayDDee\cpuminer-avx2.exe";
 
             /// <summary>
             /// ethminers
@@ -242,48 +245,48 @@
             /// <summary>
             /// sgminers
             /// </summary>
-            public const string sgminer_5_6_0_general = _bin + @"\AMD\sgminer-5-6-0-general\sgminer.exe";
+            public const string sgminer_5_6_0_general = AMD_Miners + @"\sgminer-5-6-0-general\sgminer.exe";
 
             /// <summary>
             /// Defines the sgminer_gm
             /// </summary>
-            public const string sgminer_gm = _bin + @"\AMD\sgminer-gm\sgminer.exe";
+            public const string sgminer_gm = AMD_Miners + @"\sgminer-gm\sgminer.exe";
 
             /// <summary>
             /// Defines the sgminer_HSR
             /// </summary>
-            public const string sgminer_HSR = _bin + @"\AMD\sgminer-HSR\sgminer.exe";
+            public const string sgminer_HSR = AMD_Miners + @"\sgminer-HSR\sgminer.exe";
 
             /// <summary>
             /// Defines the sgminer_Phi
             /// </summary>
-            public const string sgminer_Phi = _bin + @"\AMD\sgminer-Phi\sgminer.exe";
+            public const string sgminer_Phi = AMD_Miners + @"\sgminer-Phi\sgminer.exe";
 
             /// <summary>
             /// Defines the sgminer_Bitcore
             /// </summary
-            public const string sgminer_Bitcore = _bin + @"\AMD\sgminer-Bitcore\sgminer.exe";
+            public const string sgminer_Bitcore = AMD_Miners + @"\sgminer-Bitcore\sgminer.exe";
 
             /// <summary>
             /// Defines the sgminer_Skein
             /// </summary>
-            public const string sgminer_Skein = _bin + @"\AMD\sgminer-Skein\sgminer.exe";
+            public const string sgminer_Skein = AMD_Miners + @"\sgminer-Skein\sgminer.exe";
 
             /// <summary>
             /// Defines the sgminer_Tribus
             /// </summary>
-            public const string sgminer_Tribus = _bin + @"\AMD\sgminer-Tribus\sgminer.exe";
+            public const string sgminer_Tribus = AMD_Miners + @"\sgminer-Tribus\sgminer.exe";
 
             /// <summary>
             /// Defines the sgminer_Xevan
             /// </summary>
-            public const string sgminer_Xevan = _bin + @"\AMD\sgminer-Xevan\sgminer.exe";
-            public const string sgminer_aceneun = _bin + @"\AMD\sgminer-aceneun\sgminer.exe";
+            public const string sgminer_Xevan = AMD_Miners + @"\sgminer-Xevan\sgminer.exe";
+            public const string sgminer_aceneun = AMD_Miners + @"\sgminer-aceneun\sgminer.exe";
 
             /// <summary>
             /// Defines the glg
             /// </summary>
-            public const string glg = _bin + @"\AMD\GLG\gatelessgate.exe";
+            public const string glg = AMD_Miners + @"\GLG\gatelessgate.exe";
 
             /// <summary>
             /// Defines the nheqminer
@@ -310,49 +313,49 @@
             /// </summary>
             //public const string Xmrig = _bin + @"\xmrig\xmrig.exe";
 
-            public const string CPU_cpuminerOptBF = _bin + @"\CPU\CPU-cpuminerOptBF\cpuminer-aes-sse42.exe";
-            public const string CPU_Cpupower = _bin + @"\CPU\CPU-Cpupower\cpuminer-aes-sse42.exe";
-            public const string CPU_JayDDee = _bin + @"\CPU\CPU-JayDDee\cpuminer-aes-sse42.exe";
-            public const string CPU_JayDDeeYespower = _bin + @"\CPU\CPU-JayDDeeYespower\cpuminer-sse42.exe";
-            public const string CPU_nosuch = _bin + @"\CPU\CPU-nosuch\cpuminer-aes-sse2.exe";
-            public const string CPU_RKZ = _bin + @"\CPU\CPU-RKZ\cpuminer.exe";
-            public const string CPU_rplant = _bin + @"\CPU\CPU-rplant\cpuminer-aes.exe";
-            public const string CPU_verium = _bin + @"\CPU\CPU-Verium\cpuminer.exe";
-            public const string CPU_SRBMiner = _bin + @"\CPU\CPU-SRBMiner\SRBMiner-MULTI.exe";
-            public const string CPU_XMRig = _bin + @"\CPU\CPU-XMRig\xmrig.exe";
-            public const string CPU_XMRigUPX = _bin + @"\CPU\CPU-XMRigUPX\xmrig.exe";
-            public const string trex = _bin + @"\NVIDIA\NVIDIA-trex\t-rex.exe";
-            public const string MiniZ = _bin + @"\NVIDIA\NVIDIA-miniZ\miniZ.exe";
-            public const string CryptoDredge = _bin + @"\NVIDIA\NVIDIA-CryptoDredge\CryptoDredge.exe";
-            public const string ZEnemy = _bin + @"\NVIDIA\NVIDIA-zealotenemy\z-enemy.exe";
-            public const string ClaymoreZcashMiner = _bin + @"\AMD-NVIDIA\claymore_zcash\ZecMiner64.exe";
+            public const string CPU_cpuminerOptBF = CPU_Miners + @"\CPU-cpuminerOptBF\cpuminer-aes-sse42.exe";
+            public const string CPU_Cpupower = CPU_Miners + @"\CPU-Cpupower\cpuminer-aes-sse42.exe";
+            public const string CPU_JayDDee = CPU_Miners + @"\CPU-JayDDee\cpuminer-aes-sse42.exe";
+            public const string CPU_JayDDeeYespower = CPU_Miners + @"\CPU-JayDDeeYespower\cpuminer-sse42.exe";
+            public const string CPU_nosuch = CPU_Miners + @"\CPU-nosuch\cpuminer-aes-sse2.exe";
+            public const string CPU_RKZ = CPU_Miners + @"\CPU-RKZ\cpuminer.exe";
+            public const string CPU_rplant = CPU_Miners + @"\CPU-rplant\cpuminer-aes.exe";
+            public const string CPU_verium = CPU_Miners + @"\CPU-Verium\cpuminer.exe";
+            public const string CPU_SRBMiner = CPU_Miners + @"\CPU-SRBMiner\SRBMiner-MULTI.exe";
+            public const string CPU_XMRig = CPU_Miners + @"\CPU-XMRig\xmrig.exe";
+            public const string CPU_XMRigUPX = CPU_Miners + @"\CPU-XMRigUPX\xmrig.exe";
+            public const string trex = NVIDIA_Miners + @"\NVIDIA-trex\t-rex.exe";
+            public const string MiniZ = NVIDIA_Miners + @"\NVIDIA-miniZ\miniZ.exe";
+            public const string CryptoDredge = NVIDIA_Miners + @"\NVIDIA-CryptoDredge\CryptoDredge.exe";
+            public const string ZEnemy = NVIDIA_Miners + @"\NVIDIA-zealotenemy\z-enemy.exe";
+            public const string ClaymoreZcashMiner = AMD_NVIDIA_Miners + @"\claymore_zcash\ZecMiner64.exe";
 
-            public const string ClaymoreNeoscryptMiner = _bin + @"\AMD-NVIDIA\claymore_neoscrypt\NeoScryptMiner.exe";
+            public const string ClaymoreNeoscryptMiner = AMD_NVIDIA_Miners + @"\claymore_neoscrypt\NeoScryptMiner.exe";
 
             /// <summary>
             /// Defines the ClaymorecryptonightMiner
             /// </summary>
-            public const string ClaymorecryptonightMiner = _bin + @"\AMD-NVIDIA\claymore_cryptonight\NsGpuCNMiner.exe";
+            public const string ClaymorecryptonightMiner = AMD_NVIDIA_Miners + @"\claymore_cryptonight\NsGpuCNMiner.exe";
 
             /// <summary>
             /// Defines the ClaymorecryptonightMiner_old
             /// </summary>
-            public const string ClaymorecryptonightMiner_old = _bin + @"\AMD-NVIDIA\claymore_cryptonight_old\NsGpuCNMiner.exe";
+            public const string ClaymorecryptonightMiner_old = AMD_NVIDIA_Miners + @"\claymore_cryptonight_old\NsGpuCNMiner.exe";
 
             /// <summary>
             /// Defines the OptiminerZcashMiner
             /// </summary>
-            public const string OptiminerZcashMiner = _bin + @"\AMD\optiminer_zcash_win\Optiminer.exe";
+            public const string OptiminerZcashMiner = AMD_Miners + @"\optiminer_zcash_win\Optiminer.exe";
 
             /// <summary>
             /// Defines the ClaymoreDual
             /// </summary>
-            public const string ClaymoreDual = _bin + @"\AMD-NVIDIA\claymore_dual\EthDcrMiner64.exe";
+            public const string ClaymoreDual = AMD_NVIDIA_Miners + @"\claymore_dual\EthDcrMiner64.exe";
 
             /// <summary>
             /// Defines the mkxminer
             /// </summary>
-            public const string mkxminer = _bin + @"\AMD\mkxminer\mkxminer.exe";
+            public const string mkxminer = AMD_Miners + @"\mkxminer\mkxminer.exe";
             /// <summary>
                                                                                      /// Defines the NONE
                                                                                      /// </summary>

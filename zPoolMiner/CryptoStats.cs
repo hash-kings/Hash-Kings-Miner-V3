@@ -195,10 +195,12 @@
         /// </summary>
         private class NiceHashConnection
         {
+#pragma warning disable CS0649 // Field 'CryptoStats.NiceHashConnection.webSocket' is never assigned to, and will always have its default value null
             /// <summary>
             /// Defines the webSocket
             /// </summary>
             private static WebSocket webSocket;
+#pragma warning restore CS0649 // Field 'CryptoStats.NiceHashConnection.webSocket' is never assigned to, and will always have its default value null
 
             /// <summary>
             /// Gets a value indicating whether IsAlive
@@ -242,29 +244,51 @@
 
                 try
                 {
+#pragma warning disable CS0219 // The variable 'zpool' is assigned but its value is never used
                     var zpool = "";
+#pragma warning restore CS0219 // The variable 'zpool' is assigned but its value is never used
                     if (ConfigManager.GeneralConfig.zpoolenabled == true) { zpool = "1"; }
+#pragma warning disable CS0219 // The variable 'ahash' is assigned but its value is never used
                     var ahash = "";
+#pragma warning restore CS0219 // The variable 'ahash' is assigned but its value is never used
                     if (ConfigManager.GeneralConfig.ahashenabled == true) { ahash = ",2"; }
+#pragma warning disable CS0219 // The variable 'hashrefinery' is assigned but its value is never used
                     var hashrefinery = "";
+#pragma warning restore CS0219 // The variable 'hashrefinery' is assigned but its value is never used
                     if (ConfigManager.GeneralConfig.hashrefineryenabled == true) { hashrefinery = ",3"; }
+#pragma warning disable CS0219 // The variable 'nicehash' is assigned but its value is never used
                     var nicehash = "";
+#pragma warning restore CS0219 // The variable 'nicehash' is assigned but its value is never used
                     if (ConfigManager.GeneralConfig.nicehashenabled == true) { nicehash = ",4"; }
+#pragma warning disable CS0219 // The variable 'zerg' is assigned but its value is never used
                     var zerg = "";
+#pragma warning restore CS0219 // The variable 'zerg' is assigned but its value is never used
                     if (ConfigManager.GeneralConfig.zergenabled == true) { zerg = ",5"; }
+#pragma warning disable CS0219 // The variable 'minemoney' is assigned but its value is never used
                     var minemoney = "";
+#pragma warning restore CS0219 // The variable 'minemoney' is assigned but its value is never used
                     if (ConfigManager.GeneralConfig.minemoneyenabled == true) { minemoney = ",6"; }
+#pragma warning disable CS0219 // The variable 'starpool' is assigned but its value is never used
                     var starpool = "";
+#pragma warning restore CS0219 // The variable 'starpool' is assigned but its value is never used
                     if (ConfigManager.GeneralConfig.starpoolenabled == true) { starpool = ",7"; }
+#pragma warning disable CS0219 // The variable 'blockmunch' is assigned but its value is never used
                     var blockmunch = "";
+#pragma warning restore CS0219 // The variable 'blockmunch' is assigned but its value is never used
                     if (ConfigManager.GeneralConfig.blockmunchenabled == true) { blockmunch = ",8"; }
+#pragma warning disable CS0219 // The variable 'blazepool' is assigned but its value is never used
                     var blazepool = "";
+#pragma warning restore CS0219 // The variable 'blazepool' is assigned but its value is never used
                     if (ConfigManager.GeneralConfig.blazepoolenabled == true) { blazepool = ",9"; }
+#pragma warning disable CS0219 // The variable 'MPH' is assigned but its value is never used
                     var MPH = "";
+#pragma warning restore CS0219 // The variable 'MPH' is assigned but its value is never used
                     if (ConfigManager.GeneralConfig.MPHenabled == true) { MPH = ",10"; }
 
                     var averaging = (ConfigManager.GeneralConfig.Averaging);
+#pragma warning disable CS0219 // The variable 'devapion' is assigned but its value is never used
                     var devapion = "Live API";
+#pragma warning restore CS0219 // The variable 'devapion' is assigned but its value is never used
                     var url = String.Format("http://api.zergpool.com:8080/api/status");
                     if (ConfigManager.GeneralConfig.devapi == true)
                     {
@@ -306,7 +330,9 @@
                                 //Helpers.ConsolePrint("GITHUB", ghv);
                                 SetVersion(ghv);
                             }
+#pragma warning disable CS0168 // The variable 'er' is declared but never used
                             catch (Exception er)
+#pragma warning restore CS0168 // The variable 'er' is declared but never used
                             {
                                 //Helpers.ConsolePrint("GITHUB", er.ToString());
                             }
@@ -315,9 +341,13 @@
                         //Helpers.ConsolePrint("API Data", ResponseFromServer);
                     }
                 }
+#pragma warning disable CS0168 // The variable 'e' is declared but never used
                 catch (Exception e)
+#pragma warning restore CS0168 // The variable 'e' is declared but never used
                 {
+#pragma warning disable CS0219 // The variable 'x' is assigned but its value is never used
                     int x = 0;
+#pragma warning restore CS0219 // The variable 'x' is assigned but its value is never used
                 }
             }
 
@@ -690,7 +720,9 @@
                 Response.Close();
 
             }
+#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 //Helpers.ConsolePrint("GITHUB", ex.Message);
                 return null;

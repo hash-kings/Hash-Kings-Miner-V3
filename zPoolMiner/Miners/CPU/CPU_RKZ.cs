@@ -12,7 +12,9 @@
     public class CPU_RKZ : Miner
     {
 
+#pragma warning disable CS0414 // The field 'CPU_RKZ._username' is assigned but its value is never used
         private string _username = "";
+#pragma warning restore CS0414 // The field 'CPU_RKZ._username' is assigned but its value is never used
 
         private const double DevFee = 6.0;
         /// <summary>

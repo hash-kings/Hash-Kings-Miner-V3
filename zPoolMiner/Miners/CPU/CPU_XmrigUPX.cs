@@ -26,9 +26,13 @@ namespace NiceHashMiner.Miners
         private int benchmarkTimeWait = 360;
         private const string LookForStart = "speed 10s/60s/15m";
         private const string LookForEnd = "h/s max";
+#pragma warning disable CS0169 // The field 'CPU_XMRigUPX.CMDconfigHandle' is never used
         private System.Diagnostics.Process CMDconfigHandle;
+#pragma warning restore CS0169 // The field 'CPU_XMRigUPX.CMDconfigHandle' is never used
         private string platform = "";
+#pragma warning disable CS0414 // The field 'CPU_XMRigUPX.platform_prefix' is assigned but its value is never used
         string platform_prefix = "";
+#pragma warning restore CS0414 // The field 'CPU_XMRigUPX.platform_prefix' is assigned but its value is never used
         public CPU_XMRigUPX() : base("CPU_XMRigUPX")
         { }
         public override void Start(string url, string btcAddress, string worker)
@@ -184,10 +188,16 @@ namespace NiceHashMiner.Miners
         {
             var extras = ExtraLaunchParametersParser.ParseForMiningSetup(MiningSetup, DeviceType.CPU);
             var algo = "cryptonightv7";
+#pragma warning disable CS0219 // The variable 'port' is assigned but its value is never used
             var port = "3363";
+#pragma warning restore CS0219 // The variable 'port' is assigned but its value is never used
+#pragma warning disable CS0219 // The variable 'variant' is assigned but its value is never used
             var variant = " --variant 1 ";
+#pragma warning restore CS0219 // The variable 'variant' is assigned but its value is never used
             //cn/r cryptonight/r
+#pragma warning disable CS0219 // The variable 'nhsuff' is assigned but its value is never used
             string nhsuff = "";
+#pragma warning restore CS0219 // The variable 'nhsuff' is assigned but its value is never used
             string username = GetUsername(btcAddress, worker);
 
             //FreeMem();
@@ -289,8 +299,12 @@ namespace NiceHashMiner.Miners
 
             var extras = ExtraLaunchParametersParser.ParseForMiningSetup(MiningSetup, DeviceType.CPU);
             var algo = "cryptonightv7";
+#pragma warning disable CS0219 // The variable 'port' is assigned but its value is never used
             var port = "3363";
+#pragma warning restore CS0219 // The variable 'port' is assigned but its value is never used
+#pragma warning disable CS0219 // The variable 'variant' is assigned but its value is never used
             var variant = " --variant 1 ";
+#pragma warning restore CS0219 // The variable 'variant' is assigned but its value is never used
             string username = GetUsername(btcAddress, worker);
             
             if (MiningSetup.CurrentAlgorithmType.Equals(AlgorithmType.cryptonight_upx))

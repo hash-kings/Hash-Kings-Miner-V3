@@ -7,9 +7,33 @@ namespace zPoolMiner.Utils
     {
         public static bool IsMinersBins_ALL_Init()
         {
-            foreach (var filePath in Bins_Data.ALL_FILES_BINS)
+            foreach (var filePath in AMD_Miners_Data.ALL_FILES_BINS)
             {
-                if (!File.Exists(String.Format("bin{0}", filePath)))
+                if (!File.Exists(String.Format("AMD_Miners{0}", filePath)))
+                {
+                    Helpers.ConsolePrint("MinersExistanceChecker", $"bin{filePath} doesn't exist! Warning");
+                    return false;
+                }
+            }
+            foreach (var filePath in NVIDIA_Miners_Data.ALL_FILES_BINS)
+            {
+                if (!File.Exists(String.Format("NVIDIA_Miners{0}", filePath)))
+                {
+                    Helpers.ConsolePrint("MinersExistanceChecker", $"bin{filePath} doesn't exist! Warning");
+                    return false;
+                }
+            }
+            foreach (var filePath in AMD_NVIDIA_Miners_Data.ALL_FILES_BINS)
+            {
+                if (!File.Exists(String.Format("AMD_NVIDIA_Miners{0}", filePath)))
+                {
+                    Helpers.ConsolePrint("MinersExistanceChecker", $"bin{filePath} doesn't exist! Warning");
+                    return false;
+                }
+            }
+            foreach (var filePath in CPU_Miners_Data.ALL_FILES_BINS)
+            {
+                if (!File.Exists(String.Format("CPU_Miners{0}", filePath)))
                 {
                     Helpers.ConsolePrint("MinersExistanceChecker", $"bin{filePath} doesn't exist! Warning");
                     return false;
@@ -18,7 +42,7 @@ namespace zPoolMiner.Utils
             return true;
         }
 
-        public static bool IsMiners3rdPartyBinsInit()
+       /* public static bool IsMiners3rdPartyBinsInit()
         {
             foreach (var filePath in Bins_Data_3rd.ALL_FILES_BINS)
             {
@@ -29,7 +53,7 @@ namespace zPoolMiner.Utils
                 }
             }
             return true;
-        }
+        }*/
 
         public static bool IsMinersBinsInit()
         {

@@ -25,7 +25,9 @@ namespace zPoolMiner.Miners
         public ZEnemy() : base("Z-Enemy_NVIDIA")
         { }
         private int TotalCount = 0;
+#pragma warning disable CS0414 // The field 'ZEnemy.Total' is assigned but its value is never used
         private double Total = 0;
+#pragma warning restore CS0414 // The field 'ZEnemy.Total' is assigned but its value is never used
         private double speed;
         private const int TotalDelim = 2;
         private bool _benchmarkException => MiningSetup.MinerPath == MinerPaths.Data.ZEnemy;

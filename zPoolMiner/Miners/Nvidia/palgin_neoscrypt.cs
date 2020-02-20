@@ -14,10 +14,12 @@
     /// </summary>
     public class Palgin_Neoscrypt : Miner
     {
+#pragma warning disable CS0414 // The field 'Palgin_Neoscrypt.benchmarkTimeWait' is assigned but its value is never used
         /// <summary>
         /// Defines the benchmarkTimeWait
         /// </summary>
         private int benchmarkTimeWait = 11 * 60;
+#pragma warning restore CS0414 // The field 'Palgin_Neoscrypt.benchmarkTimeWait' is assigned but its value is never used
 
         /// <summary>
         /// Defines the DevFee
@@ -276,11 +278,13 @@
             CheckOutdata(outdata);
         }
 
+#pragma warning disable CS1998 // This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.
         /// <summary>
         /// The GetSummaryAsync
         /// </summary>
         /// <returns>The <see cref="Task{APIData}"/></returns>
         public override async Task<APIData> GetSummaryAsync()
+#pragma warning restore CS1998 // This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.
         {
             // cryptonight does not have api bind port
             APIData hsrData = new APIData(MiningSetup.CurrentAlgorithmType)
