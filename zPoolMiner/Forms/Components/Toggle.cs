@@ -6,7 +6,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+#pragma warning disable CS0105 // The using directive for 'System.Drawing' appeared previously in this namespace
 using System.Drawing;
+#pragma warning restore CS0105 // The using directive for 'System.Drawing' appeared previously in this namespace
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 

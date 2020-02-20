@@ -178,7 +178,7 @@ namespace zPoolMiner.Devices
                     if (nvmlPath.Contains(" (x86)")) nvmlPath = nvmlPath.Replace(" (x86)", "");
                     if (File.Exists(nvmlPath))
                     {
-                        string copyToPath = Directory.GetCurrentDirectory() + "\\nvml.dll";
+                        string copyToPath = Directory.GetCurrentDirectory() + "\\core\\nvml.dll";
                         try
                         {
                             File.Copy(nvmlPath, copyToPath, true);
@@ -660,7 +660,7 @@ namespace zPoolMiner.Devices
                     QueryCudaDevicesString = "";
 
                     Process CudaDevicesDetection = new Process();
-                    CudaDevicesDetection.StartInfo.FileName = "CudaDeviceDetection.exe";
+                    CudaDevicesDetection.StartInfo.FileName = "core\\CudaDeviceDetection.exe";
                     CudaDevicesDetection.StartInfo.UseShellExecute = false;
                     CudaDevicesDetection.StartInfo.RedirectStandardError = true;
                     CudaDevicesDetection.StartInfo.RedirectStandardOutput = true;
@@ -733,7 +733,7 @@ namespace zPoolMiner.Devices
                 {
                     Helpers.ConsolePrint(TAG, "QueryOpenCLDevices START");
                     Process OpenCLDevicesDetection = new Process();
-                    OpenCLDevicesDetection.StartInfo.FileName = "AMDOpenCLDeviceDetection.exe";
+                    OpenCLDevicesDetection.StartInfo.FileName = "core\\AMDOpenCLDeviceDetection.exe";
                     OpenCLDevicesDetection.StartInfo.UseShellExecute = false;
                     OpenCLDevicesDetection.StartInfo.RedirectStandardError = true;
                     OpenCLDevicesDetection.StartInfo.RedirectStandardOutput = true;

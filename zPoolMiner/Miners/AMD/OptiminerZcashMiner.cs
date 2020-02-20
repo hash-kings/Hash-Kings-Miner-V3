@@ -29,11 +29,21 @@ namespace zPoolMiner.Miners.equihash
 
         private class JsonApiResponse
         {
+#pragma warning disable CS0649 // Field 'OptiminerZcashMiner.JsonApiResponse.uptime' is never assigned to, and will always have its default value 0
             public double uptime;
+#pragma warning restore CS0649 // Field 'OptiminerZcashMiner.JsonApiResponse.uptime' is never assigned to, and will always have its default value 0
+#pragma warning disable CS0649 // Field 'OptiminerZcashMiner.JsonApiResponse.solution_rate' is never assigned to, and will always have its default value null
             public Dictionary<string, Dictionary<string, double>> solution_rate;
+#pragma warning restore CS0649 // Field 'OptiminerZcashMiner.JsonApiResponse.solution_rate' is never assigned to, and will always have its default value null
+#pragma warning disable CS0649 // Field 'OptiminerZcashMiner.JsonApiResponse.share' is never assigned to, and will always have its default value null
             public Dictionary<string, double> share;
+#pragma warning restore CS0649 // Field 'OptiminerZcashMiner.JsonApiResponse.share' is never assigned to, and will always have its default value null
+#pragma warning disable CS0649 // Field 'OptiminerZcashMiner.JsonApiResponse.iteration_rate' is never assigned to, and will always have its default value null
             public Dictionary<string, Dictionary<string, double>> iteration_rate;
+#pragma warning restore CS0649 // Field 'OptiminerZcashMiner.JsonApiResponse.iteration_rate' is never assigned to, and will always have its default value null
+#pragma warning disable CS0649 // Field 'OptiminerZcashMiner.JsonApiResponse.stratum' is never assigned to, and will always have its default value null
             public Stratum stratum;
+#pragma warning restore CS0649 // Field 'OptiminerZcashMiner.JsonApiResponse.stratum' is never assigned to, and will always have its default value null
         }
 
         // give some time or else it will crash

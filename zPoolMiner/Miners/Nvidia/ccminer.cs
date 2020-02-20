@@ -38,10 +38,12 @@
         /// </summary>
         private const int _cryptonightTotalDelim = 2;
 
+#pragma warning disable CS0108 // 'Ccminer.BenchmarkException' hides inherited member 'Miner.BenchmarkException'. Use the new keyword if hiding was intended.
         /// <summary>
         /// Gets a value indicating whether BenchmarkException
         /// </summary>
         private bool BenchmarkException
+#pragma warning restore CS0108 // 'Ccminer.BenchmarkException' hides inherited member 'Miner.BenchmarkException'. Use the new keyword if hiding was intended.
         {
             get
             {

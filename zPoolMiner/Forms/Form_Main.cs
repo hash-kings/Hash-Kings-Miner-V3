@@ -111,7 +111,7 @@
         /// <summary>
         /// Defines the _betaAlphaPostfixString
         /// </summary>
-        private const string _betaAlphaPostfixString = " Alpha";
+        private const string _betaAlphaPostfixString = " Beta";
 
         /// <summary>
         /// Defines the _isDeviceDetectionInitialized
@@ -149,9 +149,15 @@
         private int EmtpyGroupPanelHeight = 0;
 
         private String updateText = "";
+#pragma warning disable CS0649 // Field 'Form_Main._backColor' is never assigned to, and will always have its default value
         internal static Color _backColor;
+#pragma warning restore CS0649 // Field 'Form_Main._backColor' is never assigned to, and will always have its default value
+#pragma warning disable CS0649 // Field 'Form_Main._foreColor' is never assigned to, and will always have its default value
         internal static Color _foreColor;
+#pragma warning restore CS0649 // Field 'Form_Main._foreColor' is never assigned to, and will always have its default value
+#pragma warning disable CS0649 // Field 'Form_Main._textColor' is never assigned to, and will always have its default value
         internal static Color _textColor;
+#pragma warning restore CS0649 // Field 'Form_Main._textColor' is never assigned to, and will always have its default value
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Form_Main"/> class.
@@ -491,8 +497,30 @@
                 // check if download needed
                 if (!MinersExistanceChecker.IsMinersBinsInit() && !ConfigManager.GeneralConfig.DownloadInit)
                 {
-                    Form_Loading downloadUnzipForm = new Form_Loading(new MinersDownloader(MinersDownloadManager.StandardDlSetup));
+                    Form_Loading downloadUnzipForm = new Form_Loading(new MinersDownloader(MinersDownloadManager.AMD_Miners));
                     SetChildFormCenter(downloadUnzipForm);
+                    //LoadingScreen.SetInfoMsg(International.GetText("Setting up AMD Miners"));
+                    downloadUnzipForm.ShowDialog();
+                }
+                if (!MinersExistanceChecker.IsMinersBinsInit() && !ConfigManager.GeneralConfig.DownloadInit)
+                {
+                    Form_Loading downloadUnzipForm = new Form_Loading(new MinersDownloader(MinersDownloadManager.NVIDIA_Miners));
+                    SetChildFormCenter(downloadUnzipForm);
+                    //LoadingScreen.SetInfoMsg(International.GetText("Setting up NVIDIA Miners"));
+                    downloadUnzipForm.ShowDialog();
+                }
+                if (!MinersExistanceChecker.IsMinersBinsInit() && !ConfigManager.GeneralConfig.DownloadInit)
+                {
+                    Form_Loading downloadUnzipForm = new Form_Loading(new MinersDownloader(MinersDownloadManager.AMD_NVIDIA_Miners));
+                    SetChildFormCenter(downloadUnzipForm);
+                    //LoadingScreen.SetInfoMsg(International.GetText("Setting up Shared Miners"));
+                    downloadUnzipForm.ShowDialog();
+                }
+                if (!MinersExistanceChecker.IsMinersBinsInit() && !ConfigManager.GeneralConfig.DownloadInit)
+                {
+                    Form_Loading downloadUnzipForm = new Form_Loading(new MinersDownloader(MinersDownloadManager.CPU_Miners));
+                    SetChildFormCenter(downloadUnzipForm);
+                    //LoadingScreen.SetInfoMsg(International.GetText("Setting up CPU Miners"));
                     downloadUnzipForm.ShowDialog();
                 }
                 // check if files are mising
@@ -524,35 +552,11 @@
                 // check if download needed
                 if (ConfigManager.GeneralConfig.Use3rdPartyMiners == Use3rdPartyMiners.YES)
                 {
-                    if (!MinersExistanceChecker.IsMiners3rdPartyBinsInit() && !ConfigManager.GeneralConfig.DownloadInit3rdParty)
-                    {
-                        Form_Loading download3rdPartyUnzipForm = new Form_Loading(new MinersDownloader(MinersDownloadManager.ThirdPartyDlSetup));
-                        SetChildFormCenter(download3rdPartyUnzipForm);
-                        download3rdPartyUnzipForm.ShowDialog();
-                    }
-                    // check if files are mising
-                    if (!MinersExistanceChecker.IsMiners3rdPartyBinsInit())
-                    {
-                        var result = MessageBox.Show(International.GetText("Form_Main_bins_folder_files_missing"),
-                            International.GetText("Warning_with_Exclamation"),
-                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                        if (result == DialogResult.Yes)
-                        {
-                            ConfigManager.GeneralConfig.DownloadInit3rdParty = false;
-                            ConfigManager.GeneralConfigFileCommit();
-                            Process PHandle = new Process();
-                            PHandle.StartInfo.FileName = Application.ExecutablePath;
-                            PHandle.Start();
-                            Close();
-                            return;
-                        }
-                    }
-                    else if (!ConfigManager.GeneralConfig.DownloadInit3rdParty)
-                    {
+                    
                         // all good
                         ConfigManager.GeneralConfig.DownloadInit3rdParty = true;
                         ConfigManager.GeneralConfigFileCommit();
-                    }
+                    
                 }
             }
 
@@ -667,7 +671,7 @@
                 // less GPUs than before, ACT!
                 try
                 {
-                    ProcessStartInfo onGPUsLost = new ProcessStartInfo(Directory.GetCurrentDirectory() + "\\OnGPUsLost.bat")
+                    ProcessStartInfo onGPUsLost = new ProcessStartInfo(Directory.GetCurrentDirectory() + "\\core\\OnGPUsLost.bat")
                     {
                         WindowStyle = ProcessWindowStyle.Minimized
                     };
@@ -1368,7 +1372,9 @@
 
             // Check if there are unbenchmakred algorithms
             bool isBenchInit = true;
+#pragma warning disable CS0219 // The variable 'hasAnyAlgoEnabled' is assigned but its value is never used
             bool hasAnyAlgoEnabled = false;
+#pragma warning restore CS0219 // The variable 'hasAnyAlgoEnabled' is assigned but its value is never used
             foreach (var cdev in ComputeDeviceManager.Avaliable.AllAvaliableDevices)
             {
                 if (cdev.Enabled)

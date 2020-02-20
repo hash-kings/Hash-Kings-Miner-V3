@@ -26,7 +26,9 @@ namespace zPoolMiner.Miners
         public CryptoDredge() : base("CryptoDredge_NVIDIA")
         { }
         private int TotalCount = 0;
+#pragma warning disable CS0414 // The field 'CryptoDredge.Total' is assigned but its value is never used
         private double Total = 0;
+#pragma warning restore CS0414 // The field 'CryptoDredge.Total' is assigned but its value is never used
         private const int TotalDelim = 2;
         double speed = 0;
         int count = 0;
@@ -181,7 +183,9 @@ namespace zPoolMiner.Miners
             try
             {
                 ProcessHandle.SendCtrlC((uint)Process.GetCurrentProcess().Id);
+#pragma warning disable CS0168 // The variable 'e' is declared but never used
             } catch (Exception e)
+#pragma warning restore CS0168 // The variable 'e' is declared but never used
             {
                 //Helpers.ConsolePrint("Crypto Dredge", e.ToString());
             }

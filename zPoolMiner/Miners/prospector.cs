@@ -476,10 +476,12 @@
             return ProspectorPlatforms.IsInit;
         }
 
+#pragma warning disable CS0108 // 'Prospector.CleanAllOldLogs()' hides inherited member 'Miner.CleanAllOldLogs()'. Use the new keyword if hiding was intended.
         /// <summary>
         /// The CleanAllOldLogs
         /// </summary>
         protected void CleanAllOldLogs()
+#pragma warning restore CS0108 // 'Prospector.CleanAllOldLogs()' hides inherited member 'Miner.CleanAllOldLogs()'. Use the new keyword if hiding was intended.
         {
             // clean old logs
             try
@@ -625,12 +627,14 @@
             return GetStartupCommand(url, Globals.GetBitcoinUser(), ConfigManager.GeneralConfig.WorkerName.Trim());
         }
 
+#pragma warning disable CS0108 // 'Prospector.IsActiveProcess(int)' hides inherited member 'Miner.IsActiveProcess(int)'. Use the new keyword if hiding was intended.
         /// <summary>
         /// The IsActiveProcess
         /// </summary>
         /// <param name="pid">The <see cref="int"/></param>
         /// <returns>The <see cref="bool"/></returns>
         private bool IsActiveProcess(int pid)
+#pragma warning restore CS0108 // 'Prospector.IsActiveProcess(int)' hides inherited member 'Miner.IsActiveProcess(int)'. Use the new keyword if hiding was intended.
         {
             try
             {

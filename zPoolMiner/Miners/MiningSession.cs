@@ -402,8 +402,12 @@ namespace zPoolMiner.Miners
             if (ConfigManager.GeneralConfig.monitoring == true)
             { //Run monitoring command here
                 var monversion = "Hash-Kings Miner V" + Application.ProductVersion;
+#pragma warning disable CS0219 // The variable 'monstatus' is assigned but its value is never used
                 var monstatus = "Running";
+#pragma warning restore CS0219 // The variable 'monstatus' is assigned but its value is never used
+#pragma warning disable CS0219 // The variable 'monrunningminers' is assigned but its value is never used
                 var monrunningminers = ""/*Runningminers go here*/;
+#pragma warning restore CS0219 // The variable 'monrunningminers' is assigned but its value is never used
                 var monserver = ConfigManager.GeneralConfig.MonServerurl + "/api/report.php";
                 var request = (HttpWebRequest)WebRequest.Create(monserver);
                 var postData = "";

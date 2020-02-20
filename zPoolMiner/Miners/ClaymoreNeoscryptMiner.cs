@@ -15,7 +15,9 @@ namespace zPoolMiner.Miners
 public class ClaymoreNeoscryptMiner : ClaymoreBaseMiner
      {
  
+#pragma warning disable CS0649 // Field 'ClaymoreNeoscryptMiner.isOld' is never assigned to, and will always have its default value false
          private bool isOld;
+#pragma warning restore CS0649 // Field 'ClaymoreNeoscryptMiner.isOld' is never assigned to, and will always have its default value false
  
          const string _LOOK_FOR_START = "NS - Total Speed:";
          const string _LOOK_FOR_START_OLD = "hashrate =";

@@ -50,7 +50,9 @@ namespace zPoolMiner.Miners
     private const string LookForStart = "(";
     private const string LookForEnd = ")sol/s";
     private double prevSpeed = 0;
+#pragma warning disable CS0649 // Field 'MiniZ._started' is never assigned to, and will always have its default value
     private DateTime _started;
+#pragma warning restore CS0649 // Field 'MiniZ._started' is never assigned to, and will always have its default value
     private bool firstStart = true;
     //private string[,] myServers = Form_Main.myServers;
 
@@ -304,7 +306,9 @@ namespace zPoolMiner.Miners
             benchmarkTimer.Start();
 
             BenchmarkProcessStatus = BenchmarkProcessStatus.Running;
+#pragma warning disable CS0219 // The variable 'keepRunning' is assigned but its value is never used
             var keepRunning = true;
+#pragma warning restore CS0219 // The variable 'keepRunning' is assigned but its value is never used
             while (IsActiveProcess(BenchmarkHandle.Id))
             {
                 if (benchmarkTimer.Elapsed.TotalSeconds >= (_benchmarkTimeWait + 2)

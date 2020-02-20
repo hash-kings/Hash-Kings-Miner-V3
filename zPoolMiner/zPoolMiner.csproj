@@ -170,6 +170,7 @@
     <Compile Include="Configs\ConfigJsonFile\ApiCacheFile.cs" />
     <Compile Include="Configs\ConfigJsonFile\MagnitudeConfigFile.cs" />
     <Compile Include="Configs\Data\ApiCache.cs" />
+    <Compile Include="Utils\CODEGEN\CPU_Miners_CODEGEN.cs" />
     <Compile Include="Devices\ComputeDevice\AmdComputeDevice.cs" />
     <Compile Include="Devices\ComputeDevice\CPUComputeDevice.cs" />
     <Compile Include="Devices\ComputeDevice\CPUReader.cs" />
@@ -337,6 +338,8 @@
     <Compile Include="Interfaces\IMessageNotifier.cs" />
     <Compile Include="Interfaces\IMinerUpdateIndicator.cs" />
     <Compile Include="International.cs" />
+    <Compile Include="Utils\CODEGEN\AMD_Miners_CODEGEN.cs" />
+    <Compile Include="Utils\CODEGEN\NVIDIA_Miners_CODEGEN.cs" />
     <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Utils\Links.cs" />
     <Compile Include="Utils\MemoryHelper.cs" />
@@ -408,8 +411,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Miners\AMD\sgminer.cs" />
     <Compile Include="Forms\TextBoxKeyPressEvents.cs" />
-    <Compile Include="Utils\BINS_CODEGEN.cs" />
-    <Compile Include="Utils\BINS_CODEGEN_3rd.cs" />
+    <Compile Include="Utils\CODEGEN\AMD_NVIDIA_Miners_CODEGEN.cs" />
     <Compile Include="Utils\CommandLineParser.cs" />
     <Compile Include="Utils\DownloadSetup.cs" />
     <Compile Include="Utils\MinersDownloader.cs" />
@@ -579,6 +581,38 @@
     <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets'))" />
   </Target>
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>MOVE /Y "$(OutDir)ManagedNvml.dll" "$(OutDir)\core\ManagedNvml.dll"
+MOVE /Y "$(OutDir)Hash-Kings Miner.pdb" "$(OutDir)\core\Hash-Kings Miner.pdb"
+MOVE /Y "$(OutDir)ManagedNvml.pdb" "$(OutDir)\core\ManagedNvml.pdb"
+MOVE /Y "$(OutDir)LibreHardwareMonitorLib.dll" "$(OutDir)\core\LibreHardwareMonitorLib.dll"
+MOVE /Y "$(OutDir)MessageBoxManager.dll" "$(OutDir)\core\MessageBoxManager.dll"
+MOVE /Y "$(OutDir)MessageBoxManager.pdb" "$(OutDir)\core\MessageBoxManager.pdb"
+MOVE /Y "$(OutDir)MyDownloader.Core.dll" "$(OutDir)\core\MyDownloader.Core.dll"
+MOVE /Y "$(OutDir)MyDownloader.Core.pdb" "$(OutDir)\core\MyDownloader.Core.pdb"
+MOVE /Y "$(OutDir)MyDownloader.Extension.dll" "$(OutDir)\core\MyDownloader.Extension.dll"
+MOVE /Y "$(OutDir)MyDownloader.Extension.pdb" "$(OutDir)\core\MyDownloader.Extension.pdb"
+MOVE /Y "$(OutDir)System.Data.SQLite.dll" "$(OutDir)\core\System.Data.SQLite.dll"
+MOVE /Y "$(OutDir)System.Data.SQLite.xml" "$(OutDir)\core\System.Data.SQLite.xml"
+MOVE /Y "$(OutDir)BouncyCastle.Crypto.dll" "$(OutDir)\core\BouncyCastle.Crypto.dll"
+MOVE /Y "$(OutDir)System.Data.SQLite.dll.config" "$(OutDir)\core\System.Data.SQLite.dll.config"
+MOVE /Y "$(OutDir)LinqBridge.dll" "$(OutDir)\core\LinqBridge.dll"
+MOVE /Y "$(OutDir)log4net.dll" "$(OutDir)\core\log4net.dll"
+MOVE /Y "$(OutDir)log4net.xml" "$(OutDir)\core\log4net.xml"
+MOVE /Y "$(OutDir)MyDownloader.Core.dll.config" "$(OutDir)\core\MyDownloader.Core.dll.config"
+MOVE /Y "$(OutDir)MyDownloader.Extension.dll.config" "$(OutDir)\core\MyDownloader.Extension.dll.config"
+MOVE /Y "$(OutDir)OnGPUsLost.bat" "$(OutDir)\core\OnGPUsLost.bat"
+MOVE /Y "$(OutDir)SharpCompress.dll" "$(OutDir)\core\SharpCompress.dll"
+MOVE /Y "$(OutDir)Syncfusion*.*" "$(OutDir)\core"
+MOVE /Y "$(OutDir)Newtonsoft.Json.dll" "$(OutDir)\core\Newtonsoft.Json.dll"
+MOVE /Y "$(OutDir)Newtonsoft.Json.xml" "$(OutDir)\core\Newtonsoft.Json.xml"
+MOVE /Y "$(OutDir)System.Runtime.InteropServices.RuntimeInformation.dll" "$(OutDir)\core\System.Runtime.InteropServices.RuntimeInformation.dll"
+MOVE /Y "$(OutDir)MetroFramework.Design.dll" "$(OutDir)\core\MetroFramework.Design.dll"
+MOVE /Y "$(OutDir)MetroFramework.dll" "$(OutDir)\core\MetroFramework.dll"
+MOVE /Y "$(OutDir)MetroFramework.Fonts.dll" "$(OutDir)\core\MetroFramework.Fonts.dll"
+MOVE /Y "$(OutDir)websocket-sharp.*" "$(OutDir)\core"
+MOVE /Y "$(OutDir)SQLite.Net.*" "$(OutDir)\core"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

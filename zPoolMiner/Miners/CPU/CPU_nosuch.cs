@@ -12,7 +12,9 @@
     public class CPU_rplant : Miner
     {
         protected int benchmarkTimeWait = 2 * 45;
+#pragma warning disable CS0414 // The field 'CPU_rplant._username' is assigned but its value is never used
         private string _username = "";
+#pragma warning restore CS0414 // The field 'CPU_rplant._username' is assigned but its value is never used
 
         private const double DevFee = 6.0;
         /// <summary>

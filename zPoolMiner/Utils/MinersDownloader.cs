@@ -70,7 +70,7 @@ namespace zPoolMiner.Utils
             lastProgress = 0;
             ticksSinceUpdate = 0;
 
-            _minerUpdateIndicator.SetTitle(International.GetText("MinersDownloadManager_Title_Downloading"));
+            _minerUpdateIndicator.SetTitle(International.GetText("MinersDownloadManager_Title_Downloading_" + _downloadSetup.ZipedFolderName));
 
             DownloadManager.Instance.DownloadEnded += new EventHandler<DownloaderEventArgs>(DownloadCompleted);
 
@@ -161,7 +161,7 @@ namespace zPoolMiner.Utils
         {
             try
             {
-                _minerUpdateIndicator.SetTitle(International.GetText("MinersDownloadManager_Title_Settup"));
+                _minerUpdateIndicator.SetTitle(International.GetText("MinersDownloadManager_Title_Settup" + _downloadSetup.ZipedFolderName));
             }
             catch
             {

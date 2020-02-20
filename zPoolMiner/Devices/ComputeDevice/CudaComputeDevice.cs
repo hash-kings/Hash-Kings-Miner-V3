@@ -39,7 +39,9 @@ namespace zPoolMiner.Devices
 
                     load = (int)rates.gpu;
                 }
+#pragma warning disable CS0168 // The variable 'e' is declared but never used
                 catch (Exception e)
+#pragma warning restore CS0168 // The variable 'e' is declared but never used
                 {
                     //Helpers.ConsolePrint("NVML", e.ToString());
                 }
@@ -176,7 +178,9 @@ namespace zPoolMiner.Devices
 
                     return fan;
                 }
+#pragma warning disable CS0162 // Unreachable code detected
                 return 0;
+#pragma warning restore CS0162 // Unreachable code detected
             }
         }
         private nvmlDevice GetNvmlDevice()
@@ -203,7 +207,9 @@ namespace zPoolMiner.Devices
 
                     return power * 0.001;
                 }
+#pragma warning disable CS0168 // The variable 'e' is declared but never used
                 catch (Exception e)
+#pragma warning restore CS0168 // The variable 'e' is declared but never used
                 {
                     // Helpers.ConsolePrint("NVML", e.ToString());
                 }

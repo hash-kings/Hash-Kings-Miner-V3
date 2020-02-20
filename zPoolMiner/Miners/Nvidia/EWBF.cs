@@ -153,7 +153,7 @@
         {
             LastCommandLine = GetStartCommand(url, btcAddress, worker);
             var vcp = "msvcp120.dll";
-            var vcpPath = WorkingDirectory + vcp;
+            var vcpPath = WorkingDirectory + "core" + vcp;
             if (!File.Exists(vcpPath))
             {
                 try
@@ -525,10 +525,12 @@
             }
         }
 
+#pragma warning disable CS0108 // 'EWBF.CleanAllOldLogs()' hides inherited member 'Miner.CleanAllOldLogs()'. Use the new keyword if hiding was intended.
         /// <summary>
         /// The CleanAllOldLogs
         /// </summary>
         protected void CleanAllOldLogs()
+#pragma warning restore CS0108 // 'EWBF.CleanAllOldLogs()' hides inherited member 'Miner.CleanAllOldLogs()'. Use the new keyword if hiding was intended.
         {
             // clean old logs
             try

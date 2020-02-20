@@ -72,13 +72,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.labelDevfeeStatus = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.deviceStats1 = new zPoolMiner.Forms.Components.DeviceStats();
+            this.devicesListViewEnableControl1 = new zPoolMiner.Forms.Components.DevicesListViewEnableControl();
             this.tempLower = new System.Windows.Forms.NumericUpDown();
             this.tempUpper = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.deviceStats1 = new zPoolMiner.Forms.Components.DeviceStats();
-            this.devicesListViewEnableControl1 = new zPoolMiner.Forms.Components.DevicesListViewEnableControl();
             this.beepToggle = new zPoolMiner.Forms.Components.Toggle();
             this.statusStrip1.SuspendLayout();
             this.flowLayoutPanelRates.SuspendLayout();
@@ -578,6 +578,42 @@
             this.panel5.Size = new System.Drawing.Size(703, 255);
             this.panel5.TabIndex = 114;
             // 
+            // deviceStats1
+            // 
+            this.deviceStats1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.deviceStats1.AutoSize = true;
+            this.deviceStats1.BackColor = System.Drawing.SystemColors.Window;
+            this.deviceStats1.BenchmarkCalculation = null;
+            this.deviceStats1.FirstColumnText = "Device Stats";
+            this.deviceStats1.IsInBenchmark = false;
+            this.deviceStats1.IsMining = false;
+            this.deviceStats1.Location = new System.Drawing.Point(327, 168);
+            this.deviceStats1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.deviceStats1.Name = "deviceStats1";
+            this.deviceStats1.SaveToGeneralConfig = false;
+            this.deviceStats1.Size = new System.Drawing.Size(101, 0);
+            this.deviceStats1.TabIndex = 110;
+            this.deviceStats1.Visible = false;
+            // 
+            // devicesListViewEnableControl1
+            // 
+            this.devicesListViewEnableControl1.AutoSize = true;
+            this.devicesListViewEnableControl1.BackColor = System.Drawing.SystemColors.Window;
+            this.devicesListViewEnableControl1.BenchmarkCalculation = null;
+            this.devicesListViewEnableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.devicesListViewEnableControl1.FirstColumnText = "Enabled";
+            this.devicesListViewEnableControl1.ForeColor = System.Drawing.Color.Black;
+            this.devicesListViewEnableControl1.IsInBenchmark = false;
+            this.devicesListViewEnableControl1.IsMining = false;
+            this.devicesListViewEnableControl1.Location = new System.Drawing.Point(0, 0);
+            this.devicesListViewEnableControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.devicesListViewEnableControl1.Name = "devicesListViewEnableControl1";
+            this.devicesListViewEnableControl1.SaveToGeneralConfig = false;
+            this.devicesListViewEnableControl1.Size = new System.Drawing.Size(703, 255);
+            this.devicesListViewEnableControl1.TabIndex = 109;
+            // 
             // tempLower
             // 
             this.tempLower.Location = new System.Drawing.Point(78, 51);
@@ -655,42 +691,6 @@
             this.groupBox2.TabIndex = 120;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Temp Monitoring";
-            // 
-            // deviceStats1
-            // 
-            this.deviceStats1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.deviceStats1.AutoSize = true;
-            this.deviceStats1.BackColor = System.Drawing.SystemColors.Window;
-            this.deviceStats1.BenchmarkCalculation = null;
-            this.deviceStats1.FirstColumnText = "Device Stats";
-            this.deviceStats1.IsInBenchmark = false;
-            this.deviceStats1.IsMining = false;
-            this.deviceStats1.Location = new System.Drawing.Point(327, 168);
-            this.deviceStats1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.deviceStats1.Name = "deviceStats1";
-            this.deviceStats1.SaveToGeneralConfig = false;
-            this.deviceStats1.Size = new System.Drawing.Size(101, 0);
-            this.deviceStats1.TabIndex = 110;
-            this.deviceStats1.Visible = false;
-            // 
-            // devicesListViewEnableControl1
-            // 
-            this.devicesListViewEnableControl1.AutoSize = true;
-            this.devicesListViewEnableControl1.BackColor = System.Drawing.SystemColors.Window;
-            this.devicesListViewEnableControl1.BenchmarkCalculation = null;
-            this.devicesListViewEnableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.devicesListViewEnableControl1.FirstColumnText = "Enabled";
-            this.devicesListViewEnableControl1.ForeColor = System.Drawing.Color.Black;
-            this.devicesListViewEnableControl1.IsInBenchmark = false;
-            this.devicesListViewEnableControl1.IsMining = false;
-            this.devicesListViewEnableControl1.Location = new System.Drawing.Point(0, 0);
-            this.devicesListViewEnableControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.devicesListViewEnableControl1.Name = "devicesListViewEnableControl1";
-            this.devicesListViewEnableControl1.SaveToGeneralConfig = false;
-            this.devicesListViewEnableControl1.Size = new System.Drawing.Size(703, 255);
-            this.devicesListViewEnableControl1.TabIndex = 109;
             // 
             // beepToggle
             // 
@@ -910,7 +910,9 @@
         /// Defines the panel6
         /// </summary>
         private System.Windows.Forms.Panel panel6;
+#pragma warning disable CS0169 // The field 'Form_Main.deviceStats' is never used
         private Forms.Components.DeviceStats deviceStats;
+#pragma warning restore CS0169 // The field 'Form_Main.deviceStats' is never used
         private System.Windows.Forms.Panel panel5;
         private Forms.Components.DeviceStats deviceStats1;
         private System.Windows.Forms.NumericUpDown tempLower;

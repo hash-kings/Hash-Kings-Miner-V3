@@ -74,7 +74,7 @@ namespace zPoolMiner
         public static void AdjustAffinity(int pid, ulong mask)
         {
             Process ProcessHandle = new Process();
-            ProcessHandle.StartInfo.FileName = "setcpuaff.exe";
+            ProcessHandle.StartInfo.FileName = "core\\setcpuaff.exe";
             ProcessHandle.StartInfo.Arguments = pid.ToString() + " " + mask.ToString();
             ProcessHandle.StartInfo.CreateNoWindow = true;
             ProcessHandle.StartInfo.UseShellExecute = false;

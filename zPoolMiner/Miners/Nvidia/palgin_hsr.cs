@@ -14,10 +14,12 @@ namespace zPoolMiner.Miners
     /// </summary>
     public class Palgin_HSR : Miner
     {
+#pragma warning disable CS0414 // The field 'Palgin_HSR.benchmarkTimeWait' is assigned but its value is never used
         /// <summary>
         /// Defines the benchmarkTimeWait
         /// </summary>
         private int benchmarkTimeWait = 11 * 60;
+#pragma warning restore CS0414 // The field 'Palgin_HSR.benchmarkTimeWait' is assigned but its value is never used
 
         /// <summary>
         /// Defines the DevFee
@@ -234,8 +236,12 @@ namespace zPoolMiner.Miners
         /// <returns>The <see cref="bool"/></returns>
         protected override bool BenchmarkParseLine(string outdata)
         {
+#pragma warning disable CS0219 // The variable 'hashSpeed' is assigned but its value is never used
             string hashSpeed = "";
+#pragma warning restore CS0219 // The variable 'hashSpeed' is assigned but its value is never used
+#pragma warning disable CS0219 // The variable 'kspeed' is assigned but its value is never used
             int kspeed = 1;
+#pragma warning restore CS0219 // The variable 'kspeed' is assigned but its value is never used
             Helpers.ConsolePrint(MinerTAG(), outdata);
             /*if (BenchmarkException)
             {
@@ -271,11 +277,13 @@ namespace zPoolMiner.Miners
             CheckOutdata(outdata);
         }
 
+#pragma warning disable CS1998 // This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.
         /// <summary>
         /// The GetSummaryAsync
         /// </summary>
         /// <returns>The <see cref="Task{APIData}"/></returns>
         public override async Task<APIData> GetSummaryAsync()
+#pragma warning restore CS1998 // This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.
         {
             // cryptonight does not have api bind port
             APIData hsrData = new APIData(MiningSetup.CurrentAlgorithmType)
